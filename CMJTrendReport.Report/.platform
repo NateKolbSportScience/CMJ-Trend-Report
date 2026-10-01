@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CMJTrendReport"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d029feda-2825-4437-a698-24562d0c401e"
+  }
+}

@@ -1,0 +1,416 @@
+table rtp_latestCMJ
+	lineageTag: c29c6366-61b4-4b78-a570-f1b50fa53a87
+
+	column Name
+		dataType: string
+		lineageTag: 112d1b6b-3c8d-4021-88e7-cd196d46b43f
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalId
+		dataType: string
+		lineageTag: 00a1dc2e-223b-4cab-9d59-452535e98f4b
+		summarizeBy: none
+		sourceColumn: ExternalId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Test Type'
+		dataType: string
+		lineageTag: 60db0bb1-b11e-416c-bb26-04173db93e41
+		summarizeBy: none
+		sourceColumn: Test Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aca73c90-1eb7-4686-9987-ce638f333304
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: cca689dd-b856-4479-917d-f78dcfddc962
+			defaultHierarchy: LocalDateTable_9c6931d6-cf54-4ff5-a5ca-828788cf5b0e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: ac8f0c5b-a435-48d5-8732-f2b6c633248d
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'BW [KG]'
+		dataType: double
+		lineageTag: 67e06cfe-8576-4f10-adb4-a4913e1d9d3f
+		summarizeBy: sum
+		sourceColumn: BW [KG]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Reps
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c678bd3-cfe0-4e9b-ab46-daa59707b9f2
+		summarizeBy: sum
+		sourceColumn: Reps
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: d04ecb7b-4b1c-4555-bda9-39dcc1b18113
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Additional Load [lb]'
+		dataType: int64
+		formatString: 0
+		lineageTag: 06f00a96-8edc-4732-9202-17291ce9ba7e
+		summarizeBy: sum
+		sourceColumn: Additional Load [lb]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Jump Height (Imp-Mom) (cm)'
+		dataType: double
+		lineageTag: 75be252f-a7aa-412c-8e2d-b40c78a75a14
+		summarizeBy: sum
+		sourceColumn: Jump Height (Imp-Mom) (cm)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Contraction Time (ms)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bc451c8-5ef6-44c9-88b6-cbb658d931ec
+		summarizeBy: sum
+		sourceColumn: Contraction Time (ms)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Peak Power / BM (W/kg)'
+		dataType: double
+		lineageTag: d91298d7-f91e-454f-9603-6c1cb319b2ac
+		summarizeBy: sum
+		sourceColumn: Peak Power / BM (W/kg)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bodyweight in Pounds [lbs] '
+		dataType: double
+		lineageTag: eb1d75da-4b53-4bd8-a6bc-96f6f4db7baf
+		summarizeBy: sum
+		sourceColumn: "Bodyweight in Pounds [lbs] "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CMJ Stiffness [N/m] '
+		dataType: int64
+		formatString: 0
+		lineageTag: cf80c6aa-30d4-4fdc-a363-5bcd16c55f40
+		summarizeBy: sum
+		sourceColumn: "CMJ Stiffness [N/m] "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vertical Velocity at Takeoff (m/s)'
+		dataType: double
+		lineageTag: a93807be-e1d8-44a0-802b-310d03aa4ce2
+		summarizeBy: sum
+		sourceColumn: Vertical Velocity at Takeoff (m/s)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Eccentric Braking RFD (N/s)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 146a4aa9-d99e-4340-8ac6-7b3ef965c00c
+		summarizeBy: sum
+		sourceColumn: Eccentric Braking RFD (N/s)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Positive Impulse [N s] '
+		dataType: double
+		lineageTag: 1a79e577-63fb-4f08-bb68-99995a74784d
+		summarizeBy: sum
+		sourceColumn: "Positive Impulse [N s] "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Concentric Mean Force [N] '
+		dataType: int64
+		formatString: 0
+		lineageTag: 49ba5f2b-32b2-40d8-9ada-5a3a2faa8f94
+		summarizeBy: sum
+		sourceColumn: "Concentric Mean Force [N] "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Concentric Impulse % (Asym) (%)'
+		dataType: string
+		lineageTag: b1790313-399b-4a0a-ab8b-ab605b6d1e1b
+		summarizeBy: none
+		sourceColumn: Concentric Impulse % (Asym) (%)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Velocity at Peak Power [m/s] '
+		dataType: double
+		lineageTag: 56ff509f-94fc-4279-9a83-e3b6f8d7dda2
+		summarizeBy: sum
+		sourceColumn: "Velocity at Peak Power [m/s] "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Force at Zero Velocity (N)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d19b454-0aca-4683-800a-98325ebd3125
+		summarizeBy: sum
+		sourceColumn: Force at Zero Velocity (N)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Countermovement Depth [cm] '
+		dataType: double
+		lineageTag: 35157ba6-d6dd-4892-8ba8-448623405f71
+		summarizeBy: sum
+		sourceColumn: "Countermovement Depth [cm] "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Eccentric Braking Impulse % (Asym) (%)'
+		dataType: string
+		lineageTag: 069d3513-e113-464f-9a35-bff28cd8580a
+		summarizeBy: none
+		sourceColumn: Eccentric Braking Impulse % (Asym) (%)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eccentric Braking Impulse % (Asym) Direction'
+		dataType: double
+		lineageTag: 9b536a64-399f-4396-8717-b8d59b147362
+		summarizeBy: sum
+		sourceColumn: Eccentric Braking Impulse % (Asym) Direction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'athleteid.Index.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f614184-adc3-4191-bd30-202c574aa416
+		summarizeBy: none
+		sourceColumn: athleteid.Index.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Concentric Impulse % (Asym) Direction'
+		dataType: int64
+		formatString: 0
+		lineageTag: bb2ed024-ba39-4e72-ae40-0d7ec05ad155
+		summarizeBy: sum
+		sourceColumn: Concentric Impulse % (Asym) Direction
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rtp_latestCMJ = m
+		mode: import
+		source =
+				// Reads every ForceDecks CMJ export in DataFolder (subfolders included) - or the built-in demo
+				// export when DataFolder is blank - and returns the exact
+				// columns the CMJ Trend Report expects. Column order, extra/missing columns, header spacing,
+				// [unit] vs (unit), inch or cm jump height and duplicate tests across files are all handled.
+				let
+				    // ---------- helpers --------------------------------------------------------------------
+				    Key = (h as any) as text =>
+				        let
+				            t = Text.Replace(Text.Replace(Text.Replace(if h = null then "" else Text.From(h), Character.FromNumber(65279), ""), "[", "("), "]", ")"),
+				            words = List.Select(Text.SplitAny(Text.Lower(Text.Trim(t)), " #(tab)#(00A0)"), each _ <> "")
+				        in
+				            Text.Combine(words, " "),
+				    CleanName = (n as any) as nullable text =>
+				        let parts = if n = null then {} else List.Select(Text.SplitAny(Text.Trim(Text.From(n)), " #(tab)#(00A0)"), each _ <> "")
+				        in if List.IsEmpty(parts) then null else Text.Combine(parts, " "),
+				    ToNumber = (v as any) as nullable number =>
+				        if v = null then null
+				        else if v is number then v
+				        else
+				            let t = Text.Remove(Text.Trim(Text.From(v)), {"%", " ", "#(00A0)"})
+				            in if t = "" then null else try Number.FromText(t, "en-US") otherwise null,
+				    ToDate = (v as any) as nullable date =>
+				        if v = null then null
+				        else if v is date then v
+				        else if v is datetime then DateTime.Date(v)
+				        else
+				            let t = Text.Trim(Text.From(v))
+				            in if t = "" then null
+				               else try Date.FromText(t, ExportCulture)
+				               otherwise try DateTime.Date(DateTime.FromText(t, ExportCulture))
+				               otherwise try Date.FromText(Text.BeforeDelimiter(t, " "), ExportCulture)
+				               otherwise null,
+				    ToTime = (v as any) as nullable time =>
+				        if v = null then null
+				        else if v is time then v
+				        else
+				            let t = Text.Trim(Text.From(v))
+				            in if t = "" then null
+				               else try Time.FromText(t, ExportCulture)
+				               otherwise try DateTime.Time(DateTime.FromText(t, ExportCulture))
+				               otherwise null,
+				    // "12.3 L" -> -12.3, "8.1 R" -> 8.1 (left negative, right positive)
+				    Asym = (v as any) as nullable number =>
+				        if v = null then null
+				        else if v is number then v
+				        else
+				            let
+				                tokens = List.Select(Text.SplitAny(Text.Upper(Text.Remove(Text.Trim(Text.From(v)), {"%"})), " ()#(00A0)"), each _ <> ""),
+				                nums = List.RemoveNulls(List.Transform(tokens, each try Number.FromText(_, "en-US") otherwise null)),
+				                n = List.First(nums, null),
+				                isLeft = List.Contains(tokens, "L") or List.Contains(tokens, "LEFT")
+				            in
+				                if n = null then null else if isLeft then -Number.Abs(n) else Number.Abs(n),
+				    Converters = [
+				        text = (v) => if v = null then null else let t = Text.Trim(Text.From(v)) in if t = "" then null else t,
+				        number = ToNumber,
+				        int = (v) => let n = ToNumber(v) in if n = null then null else Int64.From(n),
+				        date = ToDate,
+				        time = ToTime
+				    ],
+				    Types = [text = type text, number = type number, int = Int64.Type, date = type date, time = type time],
+				
+				    // ---------- choose the data ------------------------------------------------------------
+				    // DataFolder left blank -> the simulated demo export built into this file (works on any computer).
+				    // DataFolder set        -> every CSV in that folder and its subfolders.
+				    UseDemo = DataFolder = null or Text.Trim(Text.From(DataFolder)) = "",
+				    DemoCsv = Binary.Decompress(Binary.FromText("jX1br27Hcdx7gPyH82LABja/M9Nz55tk2YkTyjEYwQYi6IGRjmzCIimIlB39+0xV91zWhVz7xZdz4Zm9Zqanu7q66h+/+ubT29/9vx8+/enbr/7wD797+9Wn73/48Ku//PHT2y+++uHT26++7r/983/58Ov/+d9+8/blpz9+//arr/71+7ef/e53X//w9Xf9r3z44ruvfvfh13/4v795+x9//uaPH/77p6//9d9++PDX//DNHz/75Xff/M2HX//2m9+8/e133/7wp69+i7/yAf/JD7/+5vvffHj7p09f/fuHf/ruPz/96cPHDz//5Ydf/8vHf//X/us//+53f/lP/Q99/W3/A3/+9nff49/A3/nbX/6PD//7h69///tvP33ff/EfP37Tf/GfP/3ph69/21fzz5/+8N1vv/7hLx++6j/FV//+6bvf/77/Wx/xF//ut7/91Ffx9W8//PxPX/3719/+64cv//4X+A9wJd9933+g//j0oa/7z3/4vi/wHz/wX/vu2/G3fvnpq28//P13f/otfvP4W+Mv/dWHv/7Z93/pP/Rf/9XfvO1L2X5QW43+h/pv/Z9Pf/puLdv+y3/+tm/IN9/9x6dv+r/w4Ref/vjDv/FD3v0Ud//4f/0vv/j0zXcffvbDv/3h0w+fPrjy9ou/++X/cv1/98/3Jh99/ihO8pt3n7vw4We/fGvuVd/C25t7i+3l3mqobzm8nLyJc6/wlqW4t/Dyzr+FEvr/Ke2F3yvxTV7+wxf9f7aS3yT49PZZyK/2Fl/xwxenZfioy+j/+7iM9nmKXEX/W7qKFF/+rUpfRXt53/+l2v//VlLpq5D+P7NzfRWpvsqbpOzf3Mt9+LL/nivpTVqtfRXulbHkD1+eV5FsFem0ivp5clwFvoCuov/9voKMVfQvIr7iWxSJWEVfXAoS+gfx/dv1H730VYiuIvXvkgpWgb+RXvWyiv4ldUv8WEXRVZTPnccqqmD93JHUvwq/Rd+k9Ob77/i35Puy+levfQER21CxCl9yeev/B3ekxvbmWytcRew7ki470jdYVyGnVfRvkWxHmq2ivNJbKR7nImJHGs9FC/x5w1sUkbfQ956/57E2W0Xfoth3C6vARtXrKoKtIlxXoacz9b/JVYTSz11z/dPnVw5cRf9k0n9qeZV5Op288HsOByD1HZFXKv1PhP5BPgv8PRza8yrsdLp4WYUT7kjuX0DPBXag1n4M06uE/pFx1krum9MPTP/goWbcEelfXbBP4RX6t8B36t8lieMqKk/nZRV2Ol26roKns+9zsR3Bty4hveV+baSfC4dv4yNW4fonirUfcSmlr018vxcZBwA70jdDYv96nwluqu9X57KKaquo11VUrMK7PK5q7Dv9VvuOZ//CPxj6QXtrwfMIOBwM33/U5HEwUsh2Sfp24dSW/nVwVfuKXvl6SZoto10uSfK6jLjdEnmrsd+SvtsIRdyTJrwlpQekFAojRl9GKEU/Pr9G68voV/qzgOhz+zWyLSOPZdQZPkUPaJ3XJPbtydVjGX0nEDJ8/3Ol4oS2fiyyIHxE/Fs9cqV+LQvXUVIPIi1gV3DGI47MOXI5i1zutI76eeSu1DAiV8S9qDHitvb/sOfvpNbX1X/ufgBD9H3BDov1LTS9lownCHMRkSu98MvlugqLGV6uXyMG3RU/DkfAv1D6Kej3tZ9UkdDXlWLB4cj95wg5I2AXnMNanQap/nuxvzfiA14TRuO+jksct6jhw2kdxaLGdjgC9if3d6Pvf49Vdjgcl1H685Fiv2+hBxdc2IyIrcEr9wsg/R7xc+AP32yKHQ5/Phzt85h5NvJ4WnvYkDcEqB42+sPRf74eirwLga+awwZxayrek9zvUhqvGv4EnrbP+rtbGU6+fIpeEsbZkGTRq8y3td+UfiVy/+zYf1zNHBA9X9JPaHT9uwceXHE565Xg69+f/FDxnnC/7q6Kt2fN+9My+uGwN77OM4ozWWM/D+2FB8Nn/v+1MXD0mxHwNQLiXX9d3ZsfV7bgzGTn7ZGvd6nGeVfGOtrnoXAZZT7yvu9CPwsM5jx1+OEcXtL+D/YglVrqL1tKCFJ4Ywo+P+9K/2XkVLixrW9WeH7lJc4bG+yVX4Gj/6dzRODoRwGvfMErz7gR+yubeviRkvoP3IO561czWNxIeOWd5Rp3N/YSRscqeq6R9aYgeI4wWvsb0yzZkP5Q9U0RSVhGX0yseFVTwabEiPc86jIQOErCA9sjTr/H7bon5wu7fYw6LmywZfj+H8lNcGGjXlgsI+OdqAnhJOPCMoqGiF8VvbDIBPB7+s73KPichY5lIJoXS3rG18AntWTYI6Uo/es0n/GkO4Srkvv2Cc5SvxmRYRRHoyI5q26kobdH45x6SZrLCHzcWhj5Rt+Uvoz+HfoTy5wcL39O0sYpzEjPBflJz5R9//pen9iGGxscw1e5zzfOb9tYRs+9xO6rn/e1H5me7/T7ihe239ceRzLi6av1A5Jc6H+y/8B4YXsGnOxlw4npO1f4MfT6fPFUoIxVlPEt/DwZrE/6P5f7i4II5fsqcsjeIlSMPRfClvTz6Po9SaM+Sch6vObk7rY+uWQ9axU+jKzHzy1xmvX0dKMx63E93aj8GAUH2AWmG3hAvPBC6JYgikhhuiHMkr98eua3k6FpT90PaHrDB+4HNOMNRXzIPQ3nAY3IRAMKov7nvS5OowYykZ6aCpeBEH9Nvi7v/HYymn4NmWk5Hhe8bHjm+08siCcZP3e/kkiLG14XX1k09ovkbRmxoXIKWjRGreKeyrWxjBnJ63jl+8NWezHQ39f+D+Hnw3teEML7w1aQEOOUFOGD0pDdZD6vvudJklPmw+ZYMzyUKP0xmScj2SO/Uo3yhry3773DI8/0OIbMWJ1xMCIrFG5A0k+PCgV3NfZXGW98vA2gpzd+LqJ97sYTX2fh2nPwHu/7JelPCp74/rAk5HyvXoz1RfZ/rRfr2A8v3i4JLlDWeKrpn78r1o5Xdf8SxW7qqJL6W9TzDMHD2peMm4pcMGM7fI8P0aNWC4htPZb4mfs1lJepRzscCncfL44v2vYl4qwL1rvaH7TMEI4sI/C5Z2nUb0G/o62fhNCXyNIFBUC0urUvqwTNhJ1WLT99Uecq6udBLB2vM8fov5wYtPqh8BWXrr/crAF7AI+CFMPjg4lP2KWqBSOKk9BwP5gG3d2PY8a1LSImS3T2k1n7jQNsgtIEKW1FEMDJ7LuSey6GmgBJMN5+i9+51weChBzxWzQ3/ulYsS8ijorAIlbA9Sv98e3fpD9VqAhQOgqQpBQQM3Ebe0UN8AIVgj2p0TM3z9wP/OH6FCq2oynVIkWaYbP/cs+qe+mcPSNFz8x9qAybPVJEbI3CS9L/f28PaktWxGIR6TZSnDLP7VP4aJFi3Q+UA3jJX40XEQiOi8KXmklHvwmBa2U5EPrR5Cr6nxA8Mp8JfiJ3Uxydsovwcaa/hveto4lV1P7h+6cImlv0U+L4gmARMaM0ioxXWI9YvGr4wyjhkGmle3TpiGXMRfT9aAZlpPmo90jd/03k4ICxUL42/MW+CJwVwetdG6GMWgxQwZcQVNHBvoT3d7HimOHMVfQNyUe4ryedrSc4FQmOiwb39aQTF6T2kxeRdyPNwqnAgixglYgN4ptOEO45tdgWMQLWysAD4T6HZE8ILGJVtRJP8T0DzwjgiasISP5HsueZ+mZm4FUPy0+nvvunGGjf2pCqASswVjggiDUiVL58/xsx9+SzPxQvvheVDzpPRUYZgA2xU5GfaqLwcaXfIRzDZsRdqb1U7quowrDZN6cIMUcUh3jVhW+vrwFpjKJ9NeE6Ja1UCzfkcRVtXBA/oJQ8YwUuRMQF8ZmLwIIYpV1jZQgIA7/q8aDggvBsAmZD4aQPiNxA0Zdb2o7P2FaINGQRwIAjUxtXGMB6vMV+tP6lelwPAQCDCFY59qOwVK6zAijP96NNGKXaA9Im0tcDVi8C+8kEwu1RKxb+nK9a+ueqQKNZMfawzhRU7wdAuOSKvWLtLqs4P+jtCKIg85a9UK5A0l5MH/GRShVvhXKsuKWZ2XUoyVoDowxpjSlv0pTn6UFvR9SzH4qFveI+aPov9qD3eI39QOgPgge0YeN9C0V3H4uoBDoUbfTMKh6jpncr/Q+n1kCxvBswn7YGAILqMhKCNz494fP+r8oJlO9hAHEz3zdrzk/6WMbIu3eUD5uT+wlA+h8Hyof+AyryHlKAawRHYKXhvbWHjDfHV8d7Gnh9H0CDtYweOdtI9WTG7/6K9GWgTMYyCII6QG0vHIoIsCkEvqdoXHg8nFgilpGLZ+TsEf89+b/3p6jV0syzsCm1v0wpAXsVpnW5sRgqjFpAU5qwWhfkvQqIp8jKKTJ2AjRITyjfWkazfk0ts4OG9QD+7sUQYmcTAtMBR6OXH0Be3YjgPgK+ippyImIk8dbH64tvzzXAtgxn7cQ0TyhaJY0PCSIk9qQ/HjyhSG9SP4WoDJtWhgMOr9qw8Twa/XDdAdHnzHesYsBaC+MLzWI4oEYi3KjeHYsAgCQxoijzbOQB/22WX2ScneQiI1ePMndw0jnp3E9GPRWorICQdhatDQtRrsY0p/Z72PpJHE+702YE8V/cpCx6T5Jibk9p59oSly55Z/9G6A30nCMy7+xvpHdNC7Me07Ik5p3I8Eq2e4LABsCzaIui3JZElxdtNVfDwNb8toyq7StcQKfVOkqyvgq8Nsg2Il4fPqNuZL9481OuW4365dOTthrN4mxLyowZeD2Y8/FNwweuhLp7lERlhqLAI7vsYU3Yy+XJAFSM+IWTke5h18styad0a4JaCWBlBfhbCK2xXCosCvtz328FUL3AlEoEx/hwWVvkt6i8JV8+vazbt5CReroJamFLmHpqOx+XtQVH8Ld/DPTsQnFcBhMgWbVyTmIYtL+JXNfnJB9xRjwnbTaNcBISAR0kNHxcHYuPhEPRU0Ag78y4+q96W0as/DyFoSsRIf/y8TmZXyOEMwZNvLP/mBkpPp8TIDmaaPSLkwIrI/ZXUaNHOxoADaSEZDlwvWuTXILG2pR0iRk9yXLs1sRsoFZ/TVif9bjaY0ZluoNrwj54sJjBckDxzqxl9GPMWLSQdO5d4fEu6F/mF14y9q76mQgkZPRfRtKEihkxA6UhbytOKFpXyDSCY9menlPx0eUdr8mW77DlPV945DvIA722vDN2Q0iFQErWA/3oTlSWcwTCI9v/V9T1UqGtXvNINNI8GXw+PINGaWySICWtkSkolomWd9Recwoao9jy7qvrIc56zeWuRLs8amV1V8erFmfsQtRgr4YoBputgu7YC53wwOvqeTQAuDWrV3FT+4nVIu2eqnNNNOoRQKhlI8n0W9wzf5BkCNrgwJZK1BURNGJ7POgiPYI2qwpQwMmI42gE5pu39ZoK1yO4VVdbIDPJigY2AkHw/fhmIjrIgjySruqZ+/Xo7kZCjhwgoW/F9skd4nmpCrYOb7Lz6Tccg3B85Lfo/17/yVCsAMfocZwISiuE4xvXZmUzkLAs/Bb9Z7ijLZ1r920V9fSyEm2Mid8iW7HYAyVX0TcqgY4Dqk5VxNmP1wQQW62Jd7Xco7/nu7razCFbiZTmjuCSsDUBTIdNi5Q8f2qkWzGjSUbQC3dp7gjwP1cDk52qOdAjBn3u7rqt595XAdpSf8IL6WxA+pQI0dhkRk3A04kULLNCsvCZirOX1d/lnxf4N5yu6ha4wJdD76x/DGkWuFJ20UD3gO5hr0lQL+IuOUuD0UhgSw8fw2vT9xF7XcvQxwRPq10TogC5Zw2LjxHtbrwyQgbqFoSM/tcbI5eW8AlIVK+ebR35rni+oK+LgTA6/3GHXz3hcK9vGh4WT1ynsu3tR5MZb5yz5hlCuiS+rD+aZ1zg13CEoluZSVdmksUKKWpRgI+W2d0NaIG3vmEBnTW85/jVrF0StJHEO2to3tIxzhno1useH0MmquLegCyi1a00iIy2SSbq2AuzhGycCLVIRYVkqAoB2DJua35mY+yrUJLh9pbgcWuOLytyLn6MKoltErSUgfoF9vUErMc0XlY0P7P3zIPzbYV07Z2lY9Ha8kxA8T1rYosCF9CjYOoHoxh+E0o/h8Ep+VS7i1rBZ/AADJcPGkoem2ezuRsHvS/OmIFGScPBaJPeB4Jnv7x4zPBo9APAFh5ODiMXYgaOp59Usjt05xLG97a/WBwPM46jdiYqDgzJoRZqpNO90AkhOySwEyExb3EcCGGVOEmw78i5gpttvAF1xVnBI3QVQl2eVLJ+KDPfdwdiSkPd1PDdPXClQUyppJKFYEWrv8u5zicjLKhLWwT9aIRZwjdyLnvOBZDZo2TqqTb7qnhKwUbBNQGQwF/VnCvjy8Uw0gx/VyJdOgTu1HDf+H14r6ojBops2+ueOP6D4McI9kTp0QFw6GCSIXSBPYT2bn8G7o7G+bZuy5hd5jJ7eZlHYwSNQAQOyeir9LjdV+B5UcCQ6BlptdQvYRlS9GtkjSVPJVKYwJ+bNB03v0bRSq2+wC7gz117Ucav0UukEvoxSdo8Co2Y1hejV1GIq5AE9syrW8vomUY6BXJU4MUh03oBNvK8fT4HZXD1ugU/cUCFDz6sLFwFrTYQZj8jhecWcbs00vws4t0Foxdl6WS+J0y7qgSiO+DjJpCl2X/uv1jnRSEyOEJo4UV5TMfXKjThqfOeJLzw6BMB9/MMXugyRr5TCKGNlCVt/dfGPhEfNTzEyllPfOHLO/p561tUy3fCDkxHBXc0EUZiTC40gelGzjpDVy+sJrhTSd3th/Qzgre3/bxLK22uwqVzL82TouQHcYr9uVJJxiW6E0hBaKSRgVVuy0AhIZm9G9S5t720c/YXJuCm6c7qICVHTl3G+bQOEvANYTONlBBwDR27zS4npjtfWCkpiHDKqXN3qzgnf2GhjwtXyROm72Vq/w4pKj6Oe5wKbyvRYGwKCAA4NrIo/EkpPYFpVyM1+bH1vm1KO0bQhC9aBDDjqzVjSJfErrf0cBFBGUHWJcrSCZN+CkKGKFdI8Lq6J7ArfvSnjNyT8jzgHXSzEot4pRj2s5EL4YF+GyPaAoEgkHULRjcL3YLm7KKkO8L48V2LH/MpZqRRnoSmHDoko0kTHkExXY0g349G5ZbgnrQyedroAQsoQ/qc3PG3Trd1W0QaxUnZBkxybtbsRXGCPgrebw6YJOS6wne//xeS5cG4QTifWfOMoI3on35at0VIO+JcofHzR4AZfgGxyk5BoZYw/OPry7qqybYjs4B3zZKd2+h5jBhzEc0WgYARdwQU7EKA/0R2ALH4gYCmiAZKJpQVe7ITLQElza6WaAX8XbP3FDDmKorNENQwUQSwBmth853xAjcmBcfyCG+IRBJAcE9B1R3wEuZiBNfkM/Y77jKuU46x7UcY4FLZnnawHvoPi+zGI8ErBf9Ef9p7GYKRErA9kzZ78+Ajo6UQSUPgs//cWtz2w8kgFsaZ56B0Jw+YUDDr18BWJgqgKOhJCGEdF9zqLBaOeXjrLIY74tQxz9mPZhyhIs1vgZDVGCr4VODCVHKkKuhbbHxHBJB+NjP5t/otPMYHKkMWmK/yVDVvq4jtyFlKkQkv42bRC+JRvhKG78cv4nxiGC0pFzkau5HDWLk2Yzf6W8rpMdmaq1igY96QjL6M2Piye+M39iihSEbDTJzwSQV+Io212BcWSARwBiJWYl78UKLFj+UIim9JDi4ZyD8gARcmOcAfG0cYAl5UdBWFWK9nl08rd0w2SCTyiYPk7zppJ3BprgI1ibu0bZCFx4EgEGfJRbcEcB/+I+BOeQUd45gDA5oSjeHoNQX76bwzfpzIpzv10bTDmoUER6WGJGQXhT9vf6591ME89toNgmeHFYToVIwP4e7I4efndE7Y+Dk34DdkHsx8tI400+oJoBL48BVi0cYN5wZIUDH8AB3WvlpD5v17XlM/0T5jcE1gPhDpBDBfWI8gSeiHlaycgro540ayVS9um17ACGkPF2EyuMJTCr5WUT6PmoKnDX/t3yLwWHjEaPzUqegILegQmT1vZjFAfrUqAv7qlHmpAzbvOpzrW1hV5DbyVFX6rbwAJjnHoQEF2XoYiXzKHXNfl/Kke1aSzoI35DPdUVTOD6oP5xQ8b8B8z/wbIXHyb5H8tsiqyIHOxkk05d+mkuZjBgactDqApXgXwc8v6nkZK8VJPAgYyyPLUYkyGZOQYDmCFR71YCDFCYq/fmnQl0jSQkDu59COiM6+iji4lm2uIpGBixCuLW8METSuogeQiCIskPXcn1Bn7QF8J8wo+mYMXLnjIp/fkW0V6Yi+Ju3qMnjiqir6WkmrBBnHCFSBmVYLxiXDNcYW1TBZCO75HVnHU8Y7ErcQDh4w6tTCdwQxtrGXJ+BI5F754GCgtwykYw5XN1weJcrrIMcDutWXMXFPDeEbu4/oVmLLu84uhWjfKEZkOP0EEBvsuVZYhWoEBEmyTnvZ/NFTCPeL6ZjcKYgT9M3kyks1MkTGHcBrgZCBMR8lEoIrHcctQdUeY5rzmu+oA9bH0NJs61JUEmCZYoRok+Y9qyVZB8RxgCkK9bFZUkf/H+8OOjugk1VmHo9PybYlcbwleUu3gF+Ch5uZhNd+chI5GTyggOgT2RBJZNbL6NVLjclSjDvm0iX/XctI8djxDmSPZUfAMVvHu1dFzabdosNgC1fNLWFBqnx5XN8WLQNuzxPFfRlztsbuySKo4HEmkuK1QuQTl4VkPkzCpZ6LBW2uxznKgZOBj5GcISnueSBvX0VK5xQ4spPJbl7Q8WpMTfpsOEVfhpC6xHKgTFmIEjnLGiaPyz31FLEh84CG255imWEcFyhVTvggPwgNM9ccaO1VU9Msk7AShweKkdrukJTLlmyrOGXixAQMA24jE6/KegAxpCdVgSNonL4L82UFGCo56VRgvUUOLlsiC3yddMe6LQM4fD+gUdk6gHfa5KcIJ94DtwSkqQFgAOJI0c/W5s3JsDTDl8vHEKPJzP6AAGTG10BlgCcDJXoOFUExICMX/GplD6ChNT/GeIWSGr7Z24oi7jmGysauK3eTDIlvPEYjHa5yjwljnCLijQ+ka/VFysJfMd+Sir7xTemYTynotow0GhV+Yo69cE6MGyBRkVVYoyMLFePVHpQY5Rr2oDk5ALlZOFM9BHd3U86hXPxJAEC2MckeyoMOXzkCsIyp7B0JQznqMULiJJAP1npiD8sZX8fdcWHPOej+MaoloWVWSEkx8arkECwr56wT7/2C8u4KqQhoyrvRSoN8RPTewD551iFYyyjb0NGi5Hq0R1AXuGLIZ8HX185MBOyKPWGcLwaKoy4IyuBRKpd/Jl4e9kTsZLQN1wE+0vck6vw/PpqzUYLUV8ehUeZ44LjlkWxwnJizgfXHUPFzeSJz+CnEy/x/44RibsTmm2GOwOYFrV6wMQJf8v6zKztcEy/0wTkc6G0i7rEwkDWY584kKgSmquPELRiJqkIdBeEL9Yl29djd9IvLBQq1FHJl5BVvR0wuhYHIse9dw7Fpo+PEJPKTEOE4KelRvVdH3IK1WqiTitB0gi5YEL3lGp5zjbUKOxll+xZFxUscCfSeGireE4EVnE+k5KSFS2jOWCrzRdGuoteBpKfyZK1CxpBJmSk5hCF4PtEndEgH+w9KFiqGe1m1JY5WpxoXLxizUM0rtNM0N30qT7YdGQlPONCTtetNPjaYrRBoMF5wQs8mKh8iKIv/C2Mn92WpEEK6n7e5HM/J8fNzDKvsA96eoDgYddqoZALcN1/6wcGKMkFxtCnG64q8VSpBWKUapucuhUx1nUXJXbkwZGwi+83BcuFeyDIXbrisOoJE1M+vyKUnoznjItwShy7ns5z4yWW+aZQW6s8OzqdSZVAk6OQPwjjQLmNJO2zdZBpy4jZar8S7OwL9JeVZIj9u5Br77A9KIVBy2cmmKFVoNvuTgE8H5qqC4agy+Z+Y/cnja+R3ZRoT7HLxyMuIcRRrgZUBeRkUUMH7iZgRdU4QaFxo1m7G0WBCKIbE3rJQLy98PUWuyZLmiB4Lg/4PNco/9RgSCBsA/UsBihVNWSrAPUe6gxQ5+WTsJXd3QC8v/OQapiHHsMZMeozwyv5U5npENy+SQxV60gWAPjYdaXBGGdcp215lF0Ni3d23uNQF7cgA2DgqiSM35KjEwCgOIShWjByvaMjTWdt7sCbKqAt4mK2Xp4t7Tv3a0s4rR0xDCbnVD5khYhql2DABDgbwUFfGGKszKBZTab14G8ME4e5lvZQnc0IutRuKSoE0hSPHjw3WNkgZ/WAI2vASuCUg1AxShnBALllPsd09JpeHdQ4L+jHyvofx6pmNN8ctAepUxMJ4ANms3xmGjCSzZ9Io9xIGFTa8K/NrR+28XZmCOVdmlhGTKVOkmMTwgn5NUaI49rwhlTBoQ7g8GLX4LCIPrnfv++VlbUdecEubnGEkolGsucl+qWPN/BKKExAFpTYdlCgG1RCTPz2QiVXx6T3I33ZAfb5Af2BJV8JMjm8rBguSMoN7yYgKP+RCrnbKa8665DFGyum557HeNMZ626DXrSDOQZ/G8NmjpWd5nziBRQpdIOm11kUMjmto0dXyExMNp8CVttlibS02Ocg+ccw66/gR+ljZJ7J18L574AdCDj8SwSFZwj5WYH8TnzU96y3NVQym4T5xQ/KnHU9Vp8BEGEGmylUIJAAongfhDmeIWyFbxw16stzR1o/v6v4tUh3vatsCF3qEGOBQHheWxRoegFpCJRmohtSXEXr8NCgBtySTXKdZRnx60dLHdCTCbjQEdhYdh1kZxJHeN686XB61JEgrfHoEd8aPVBzTcb2eJYurpwPPM85zEVMZokxQhdwH1e9jOx0vS9FRVnT6Yozau0EsiV7bIwyeYXQWPSex3FPwnIuY7c2wyVNUnS4OQy5EMPMzCQBAojEAxZ5jm5KKZJIF5p6UlruLFsfYuS1iiPr4OTTJ6cSMqMDGonCCtGjv3eNTgAMqRB5Blx/7oUWziebJ7dN+ilnbKmbEkn1kEi971vGnzO5mGCOTKYHtmAhJCwWOrGUCrDQThC0/AnKdMr60aAhGS146BFXZa+Srp4ksUZ6CelsRLSSJvKUhrWlvjipGb8jSbS1wTC/SYoXYVMd5rDiyt5ltrLhKZueuH4IY0UeiLqd472cLCyKTEuuQ37p7Qk7gQdra/1IuykK1fxmS5rMQPIDUEaVWMQcWoAWLaR820kZX0cADifqClHsZ2GN1tq9iPOtLBIDcfX1DeOijKvUGE82JDuy6zBQcEx7zDVE9BFWGiLcYxqksSouR4fIJzyGpUaMmeaeKC/to81dK3vJNwa2w0UI4c6R6CE3JCT+NKm1n0w/ivuzzgUJyIYpTzyTX5aYDghUz3+iWsCYCuy0PiC1xmldVZGxu8OlN9/4iiLBYCE6rEcqvGmepcfIJ8pWR5VGLfNSrn0S2KnngKJn07EeVjLRPWE/dEtlvaqDuKb4GBftKouaUI1MHR4Qhoccz/feUg+tGmyJyZvMdl2SNm+ue1Fku60hcJiG5Nc7eo8HIoIXnMwD2Cky+2G2e9BQhdycZ0bLcXZLzS7a2xJTy2nxFGDoLW5uUouX7mpWqDr2tUCuZwAidHroH1qYgt9CJjQe2O2LIOc9a0+bKBF4qYBzgptooLgULRKiYOPYUgbpG8pEDmeqbAmwLVJ9sJg13S2Y7v2Xb8Zx1QJ11QCAejoIVoYjzgqIyVz1CR0HmKxq34hrZzMhFQ0xGJKt3aOM50drOZypnmeJgSDQ4hH7KFBdVS8YoJ4V1IsFXwJIz4cP8AKt2No3vEr5jPXI4Gu2E9EFeC00x078i97jVVm26KXkM9jIrlFQsTjK0utFh1Sh+pQCIZTniLqvw7jgtyTS+QQC2gIig05K9KPNjiAEwhmRuP2uCNjmfqF0wby6EDfMdU+b8sHo55RjzMWFPkFNHStz3QqaMU/VCdLxZqiLd8pCSTnY2UjRK1RimkOfs1y/cMxqeU3fKPKZ9IHZGPCeigGZzAH2jTNYnmwOExufwPQXW/aDM39KGzhXJWsZSUUk78JkoCOaKdXrJrTPgE3OqgSxuAe9wdt/xBEIsTG+KPOvrrGUMraEDfOBViiDrJC3hA4mkGSKQ8sdujbh83NCtyuogM2yEewOA8wM/VrHkvKdmHgHHqvQQtmyomQcSlYkNZQQyfUCRZ5QZQ8uQBHOqohKfqJ+HdaQTO5oXFlK/2TRllB+ijzwOB1/azF4ZVHKXWAYKNKmmvi93Zck51VibMgdt3J6Mx10EAIp1Tks0TiOhXDUYw5kghU1gSzO6erlny5yzv0VgCvHM0tYRycCrovP3FP7hVQH0SFC84JuxiZgGSzty/n5oOvrnkfO0j1mHixhB1tIEnI8hvmSOCNSHwJxa1RmsulEe0VuBwOCYcXnPK1+PucYmysUxBuVpCwf9+d6mYvVgAs80iIqeuqQkZIpog1PGWtG9T+pzX8UkG7bZ5+3BqlDZptF7gewupwIm/XiQCUpYgez9SU5OZEi3qbKZ3/HKzx2RKTe/ODuREAI4O9rnBYues7SFJgC+jesKaG0IxmVK+JYhsJPvqG2X13V+jJhOc5s6WcIayYsloX2VivYFiq0rKI7nFRoeQxJBY1qzk3ErenQJGvU4g9XqVqo5FTYvr6oxoyIFYhba/0YKkMPKBHXgiOBHYVBN90dlVPzzVFxfxURgw+A87szLqk1vSttQKpgJcA/k0JQBCqsD+MKhUtOXRKGdk2IZ5R5aujzx7aRyuU+PCqcZAHDJnB4lKQMTgREHMbDt2rdLlPeAJ75SK7iYY8dd/+paF5ylBCc1hBryGBvAR0fEQGmYUyQbAuBSIG2dO0JVACuePZ6e6HSOoN4WjNcXvp25XOkgNU9ovocMbW0mTGS58aghWg3109ImY5wWFSquXsi8DM+go9/A6DJQx7LrtfUzBGqbJ3OoIJQNvbbEeUEG9/57WWdJzOhFUsxGHCp3j9qRwHQ4GjISnpGGkojgM1F61fnB26o/OCoUTKVhPI8zJtY9xGJS1Vl4Fdz04XlYMW1EqvE51rbQwaRUtnobtwWlgTqHgDMEqAEdZ4RMELhHW9FPqCtw7Cc9J14bn8sfEy91DlGlyVhH4qVyLiAkBM4LNjK2KPg+JEwwTjAkTMLtTbkkXuJOIbRsQgB9TyqJ/GmYMmQOIpIZHjwbzurzgybC4BvmSJkEzzqp/cgMvm2Kv26K6Xa4bYDUsZcGKqqDvxKo/NS7elUQhWDbIZkqo4CAfRvraFkF7RRQkFuBsDO8soQR3Mg14mbLgIHAnmt4pXNBJkMb3+TJAJat9OUoPe2oM+OpKvw+GjflOZYvnfcp2eZ2mbLG2eKsdggCwIudU8y3JCCAFLClqrsfg6w4MsXkl/y9YPE5lq9vEcupXFMt2siZsGTlWhmlPOUZVMyvaN4Vx1AvsvbAURN6KN3Nj57zrvUtpFy6rIFafv1kePUGoyZUM5XPCJTRSKAIomWn7KSs4J9Opj3G8vUtfDzjCWwgNZJA08QTfHQ24RNd1i1x2tEbLWd2bhTk0c73I4vqsCVyMi+prNaUl6upMMKYziCh5RtwY6pOvIisiUUxYVLV7Sh3zKFL0Lj4ZOTtYetb1cbgpAKyhYUpiRn9Y7Qh3AHyXxxSFQRkQzDlzfCeh+0sH7IxYlWlzLkxeUNGbKWkOI25MvckUc06yjoanMgqTDYQ5OOzecnha9ikXtwGreOQMUF+S8e2VthnBTU4sjLQph7ynDiKNeVQRyOixruZl3MWut2TkyEWvdIozFU52eCVHsxhVkw0J0gjhKxdPdiY8YAq5GHSm435X36aNjnETzm9J0qWIajRVuWamwoo48QgAUxAyJjipM3kR3B2VPPyLoB6u66+XQNoOx5QcuA9spL+roGg7/FiZ2YSLxRj/d+W4YeFafz+tarN4AftLalhh5RnlYi+itVMypaJ5m0IH3yH3NhhJE0oQ+peh/ADTcJEB+UoLTMc7NwQ2iHp/Vkcdl+FG/OTMmuDoLTHxK/h0OdOrRLVgDwDtHtNUBqZlx9tnIZXPmS1B6Pu+/WqXIBIOSlObmRpwqF1ByIjZtHZyMHXoKRj5vhsI1lg6MOCuIMUQAdfJL8rBSxn26N0GPboDypb4BzDA3VHOHQNmZ1EtVyYeqDZbBrBnEch1cvZsNyd39CljJZy1KvYVcI4qgEeU9aMmM2crMAsStdKurQKRWQ/JegTITJOwVd2fuNTtpE/nsQ72oqibeChQTFqKpyWqjcWzLKqdkO4RsTPZTFzY/YTAWxPNJG5iEnc2d2GbIjSgHK6DVFCRXXwddqZGQ+EZKZuG/KAWLPR2+T5XGyLuD7yhZoubK5hSkBtz5qOvfTQHsFMCFlnrr3MbmfTaddsnZzb4HV8Xrf9mFBoOXQ7hVSVMAQBPPvPnBiE6AyAJj88ZfLqduqw80j+HghdcxHLyU82UkIFsITkLyjCAx9Wp+LaosLr6LkmNTac9jqcnQrK55L7cdLjE799ilCvggCRz4mpBlMGoUQVR0AhT6VxzmAQ1JjTUIjuac5ce3lWBNjORZDT05qMtdMjk8ShpBI4uwgYMqWqigDIC6uzYwGAB1KYLk1L1vLUPckf5WwYnDbhDmhrC4JnHryEQq4rtbVDJi8hqAqpPvCqoJyGMayqTfqn7sm+Cokn5U1NxwmDRs5qUim2knpJ5E8FuKgZXK0+JaZBMw9tJbX70uSYju+rCOnK56raWOupUzIF5SqmmpGRgRaaoYLIn83Rh1UB0dhsgljxrnlyhDTyMpZx5+PJt7lA5TGp7BGPJ2ZmddyFkm1g7lSdihtNxsSeK+mwKoT/KAybP25ik9m64DJJjz1qJdpxBUoKIXaKSgYDzwheadL08TUfm+kzmZxRd8LzUENeRiZTHWGpZmTVny8v5Q9SmQ+IGlaBZwTwG+VjBXNJo9XpSTZLwUYr7ggrJxxhW4UOu1S3zYQFtc7rP5HCCBmyOs34dQGy5wLc563vR78jaSQYib1P7YJnYEz5CUbIH09k7bqmjOmFFaIBbnCLQwj36k0LnwZQrBqX0djaM2Zw4aPTbOQm3T2p53e9Hgd/NmtvKrI6joSBYOgqBcq0hwRhGUqQhrr6ixa1+IkmUyTeNSzO8aJe3DYXK6GqCBVavAwXUNnWFzUTlS42SCpOZI5wNpXCSkbdic9M7bxEM2TYi8cDUZvNRTRNPCcpM3XOUbdFhnJeZjIh/E7+VKcfZj93EMI5w1k9k0HgP0gWoxLI6izjSAmmXhykUyIUylAJ4Fn3y9WRti9wGtEJvTs7lUuGsw6mXIfBwNtRrfU5DObUThHkNjU9YhYT1FfE4iZtRwctorwnfM9DkWb6nXZrmUiULar6E/TwSzJXuggNoMDWNGetl7XMND+VV3sP43FbxZwuPtBgowyyoS807oiqIQ1gCR0cMsoFWt/Lm6ztxh13HO1TpbodzVBO/RLUOjT1LIMSAQ0mjnsT2mSC21RoHRLSAxTXPKtkI9ghJXmqzPbD2U6sMopQKXkoKgsAWqQ+m74klVSEl9cDKPdDlraQ69/8aDiHZ3XcvNx+gj+xAJhvJ+o/kTafmGjpRAX6zYWqXCTzASMfH0NTHFPbTOoq8pT6rj6FH1VZmTQVN0w2AY6IDr+3ag3MwILINVapdIE35zw0/8Rq9nY75HJ5T9upZF8SJpxkQMleCaQ4PSg62dPDVaIkbNLWJkWhTF4SQFjNKufib5+QE5yz7Uf0JzMC2mOowHlQNCeBh0D9J6Q52cNvlCMoZPXN2pBoTtQGq9w30s6Z7zIc8uEERBcbccGGyACioR1oBGmamTjV3xe/ahFO61cxRu47mDL7KpwcyeLaelcx7Tg0EXKklyESz0goh2sTBMHpIqj2ztFEqNwz6Jk3DygvV7cMjOZRFKFMx2bH8hDCdKp/NKRg69KLw58orhmJqt496+ecc+lUxHSSbubxbCoFWykMRh4Csz1Y+CXzNme9nqfxKciwknybxo6PHKp9FUnO0gykCWWKpDkd6wACrLPNBWKGTenJoG4hxbPzqQSVkOe8eXvHyUhHH4DtZDBs1bI514HXVtoYwQJAAStajr/kRYaNTVlEOtURnzlU+8dw6aQsrlptbGvGaC4VlcZk9DMMJahaBp/9OqWKi84cJRM9anel8gU3SD9uKsPoiYmNpFLFWEZKyr5VCxWVZUDCDW2ReVmDzk9qBy3eac5frkk6hs9jzxuzDBQ0bOxrgwNZzaMMByaoHwFBLNkmbcC8rEPw0z07UR2uiTtOuTBmZJ30VgI2FZSrNvKgLI5rYsPNIdrU+/AbqsNhR+4Uac9l6jqfg8c1e83KtYZcW2KWQdfuTHvTF4aLA1Qz1I1AXAlzuDny+atxano/SkDl3YgqnoZHKx1QCz9GsuHRlNSiDKxgaP6A/skpxjrHeRsn9fmk1R8bYb08JvlkPrp3NavmGIWDtPqYZB2hwIxihPQ9RYiYh0/qEo5OaGL9xFvHzXNFsvn8xHIyeVfdPhj6vJDiUaWuwD9ZSeOBnghCJQKxl5WpDu5UEhU98reqcZdyeX0Mk2tzxxFWIRcWLP1S6V/txggrsUYpqvMT2f433iXHc4yv0y/xHUflUiUupx9N/La2eyBlKhBVytZ2r4EpVwMFA9PNUsreJvlyxK7ArlFlJ689V2jL9cjUIXYj7fAGRZ/+qBkIjZlWNms8yhK/8WSQgw0uLHJxJGF6TW6xrQsIXc4U+qlVTHtcAJv9YzR2+KmNa8I2rNEyqevtWB3BWdFeeE773jV5z/mnPzUnNkCHaiVJSK5T+KB/nBBG6pdIXgraXKWznjXy0KqpkkysOD1LuewHw9LgvCn5ZcUPCl2s2cfrkc0N97oEPnlgUiRwg/LD0ZuQPIRp2THyz7SQPLUycF1H8uc2zhDCg1pAeZZOKSo/mZwh/Hs0WvZAcYZHGQ2xnHVqwr2WywUC3nBPd9Q8Io4MyKJnwr6Y5lGJjpQMPO8o7YX2BRTNC8PykhrLVQvncIvKX4KXXF293byt/YlHs8Zpq5lqYY7SV1CeinQPEWs1h5nvoKqX7KIFjfSeWnHpl4R4HMjSZmIkq815cyMoap0Nn+2Iv2ZC1lBeykPSG3dqGFUIoD73nPBsy3BnU1aA0sDek1o405Q1A2gFFabB2dCPZ61xqNOsfkD6900MZ7tbxqWA35Rt3GmUVcYoa4+gznLQElU5hJ7F2J7Cbggr+AnMU3mTcAaXeGswfi4Mlg/URTGYSEJgYcC5RdoiwAIXUr0Rci4oDGgt70168wtjr5haRrDi+fE92X2gyqlNofNoal6crU3RKO74chi1JY+rqU1ZztMUizkRG0eS6RznntE2OXm+Y3xy4SqNcBsKdQ3lFTk5wwaIXCGpqkxUAv1INkilqQYE3+sAXIKohKOcy7qv6gSAoYZGJJj31fvQxFgIOiamBkyVgzBpCg4FEARAysi8QY8tXoknF2W6+izZy6recSwa0fRNLajsJe1cCNHzlffwSrWkh7siU5HA3x2OS/NokyS4af/DuI3JlxItOBBVssF7GjqAC6oy15xqRbTLKU9LgvD8wu7riNbRO0gjIAeMlD4icahmle4oHPxWe0MgwK4tgVjgctVlaxPceumda5R9W/KJYUcyfyxz5oVa8DkNM73+0kf20hgoVpO1qb6hGAuh3OFdZyBU4sWSqm0yoBgAgy1vsZc+QQEfMQqHgxIdRR3TKg6HbkrmAIKTgYTeDr1cnvp2BFhq2MbDnNrQk1SGQIp1FGey5iGRl0vP5kaDQzNpwEHCvJhJnj9L3ORNaGeqv7v5qIBHz1G5PAy6auQTi5I+qBECAWj4ukSLX7Rmhe430p4fMYO6BPMTHlt3/M+ppnShwDb5GjkqbyjzUGQWKRzmlMVeAlFTDSsyp3zzM7yyrSJaN81tI2o0I006opbUg0n1JiEDCkoZG47iwkgBAa9gFU4lz939lMfltrZTuyBuDJWgHefAW0IxKu+QgJsgP5oEVh0kSUuQH2Gl5Ta3JLzjtraz+mbd5jxAzGisooe3deGQuZrcQEMjZO18uzqJqMzLB6RQ7uWozi/bMisL7QpDVpV10XEoTvQWG9hD9sV2lkosBrMn0NkGzBQYbzzccyLOoXw5Ui253FXAJtVg8pTSo314jsooAyeZ+0PSgvicVuEY0FoqxdRl7gZbL6no8udKcoLeVLaNmIKoqR8KR/K4KNuGjx84kUMWrkyzMqwiOetyprsO/DkTXauQem5cYMQBBWBKw3cILCJWB2jo9qdElSs4X+vnRGkkU7OIjb3c+SxeW/DzaBjJb83XUkg5cVyvNZuvJe1TuXUB5atUteCMHB0wQXxm8blaj9H7585z2bhDwZZRJjkY47R0xiLapIOu5CPgokVlAXP4Bv3X0W+t1B1KzWae73xVTqVS2WhtchwN00qpujGFThe7rGMNmLSOHgdD2GP0qS6VGz/suVhdpGdcY/8S7WTNSlsscG+LtpI4aJxVrxdsbRF1KkMTlMoelnXR7LGq5rmh1j+NyG6LkIlB7gVKUc/zrENI6GP4OprwkIkIxAjp7TInfFGfxNimDX1+Yuxsq3DTjGoVa1Ft6NNg+OFtYdjKNDRBm9GrXC8nK7SAjplyvdkS8lv+6fF1L5sZVb30s9BthaiOPu5swjeFIKHIClIZUozpJCKmkdDMyZkTXLeOvccQXjZtF3/ThReq6GGOWOXfUbqxgEZfMwrw2MT0M7T8NnTXVf7dJeskvWMOvmySPzfq2k3nagUjDRJUMiHMh6RUdX8Pqv85BysQwauBCe3eq+EYO7dVjJmwCf1p18KRyaUMcGR9jcNw7FpATjiwguihs86erxbxNVimk54HWstSHvJDFzZvRSv1zoP6kNJ8Mml9RLUI9iwcPwWHzy3RoVNaFBMMvs0wjon4djgvsEowCb1+T300nRtWA2gjwbkYRZpOGGOCFQCL9ZFk4Cr5xzx/Tm9quXr+lKNscWwmNWnwTtHQCVqysCgIVJgJUZv+AxJWIIENt7tzcY5aEwQN+Zzm8CXXNCdH67YWzg+TyRUDjTdVpqwmJSqxk4DaKIupqrzD+r1s7Ixy8ckNKrhe0CvQZmtu7PoLXhHOB3oqUrGOHkwux7bnaram56esHjO+JRes1LpGWnIdcsE9cKvFIxjaVeE2DkdFincosy6bfTIZIvHZ4Hv7Eu7s2Ka+pzR2acl4Ktmr4zoGeVOgAAKLM/bTbMiZhFkbf/8Rl/EjnrIvIh5ZKklIpFNqRjGWSoNwM7ajX1PkuMjALdN1jBV6haVGb7YE5Xk6r+ziDP7CHEr0xIIGqpIi4jBHQLckQgRMmij3tKly9jCZjG3YutzK359Ppg8nu+AN7yOG4SnZJmmcTeVGQ/o+oFbHseDYSZ0iqOQ1hRym0fmjU0TZnKDciaHNJB7Eh2QmNyrFymcd/JVYrcHJgbSosoHExaHebE4m7n7s/Pyiri0Z5lx56xJAnYEgbKs2WdwA6OAHRm2Gi6o4W6oyjyebBy3LZiT9nGmFY7jYVSZJLWwcmazZVCZz094intQE9U0OZwpEI4pdVQroxpinNa1/KpgPBzSfrHbasolIbdj0ZjOwgzUtYCV9vOEgGEahqk5lymCK914Ax3r5sCf1KOjCVeA+mMqOlcvKYALahJlR01rHqOK4JrQCyMHZ+Xxf2nkyYdoMnDW/qJTF8qTMkXxY68gviGHQdZEl0EAc+SdCSz/l8ngszQ63NQ3tI7c97pAXwHOW2O9NagA1HnfEz8IBLGzdfFTVQNZZ+luf0fkyHX+KtUw2AVLObQZ2bmoyQZdCuiXnNiP1HGsZ7nFDz48adhBfV88M/8zHLbsXlLXg/XY0IP5PAiiqdg6/ZLPugD0W45ds882bsHeIbmobpuf8d1vG8pfJe6aj8gwujykCHeygQUMjh2hKz4+hOFr+FMO31Onx8WVdm2JJxiLM8D0RncAqxD3B+6tUHgB4UABRN9EMWOxVMydpMR3pdmuNcEJfy8bbCSeSHZF59AnhTtuGTRhYuorMB5i46dHw1fupAFrY1/BtknIf5+/LTuhyx953VAlQmros6jw4diYR5rOW7bjJfgsaECOPIRih69ZN5ZwBb45U7mgGQHsFiK0nqpioGUDxqdne9x0pc/6+RBUnppaKjPPJK3dHETknO2tHkjv6kKqXnuPsqNNZ7x4cXKX8Esz0EhTWRweeDTbzj0NPCRdRm0e3NtLng7EEIkI7iVmTzYY8w6NYVf+Q1NQLAHwZgIyIXMwKy6yZmYh7135K//58MDbtEHfxAE0qHRKoAkD7uAK83S5JlTYIyuh2zgc+FjNuIxTt3lMOyIkPe6gH4py1UfIlwJ04RaBwGwKxJg78lOE5VIeCHQGdW1buOeda0iG+2VTFYjBBDoIFgdepOCSkehDR8gTv07AtqEGkyQIIK+eq7xHEWqsAHt6OiliKYhTaizdnilgpsS5pJMpQw5kkEKQWs5fneKWcda/i87jkcRnhjjWOYRHwyuoAX0NN84XHeB6bm94uj95W4oJgt0X3UrGZx6RLTiTlpRyiqjI4oIXKDK5o6cikS5ChggkazbzYKqGRjuek3CG51+w4J8LLB2qob+bttmLMhAyRqmakEGRSn51+T2IAEEyugFDd2h4Tgn01OGO3vYMRu5bRxkzarjGOMSxa+uEF8Tj1pQYxyDEgGTY3FXW4MUasI8cuG1smP1OY9lVMtC/t89WJvPGgMiqQRKhBDURQwPFjMPfLpC5b0Yos3UVFouVemeEM6+wWYenCOIxssGJkshjjMMMIAA8XAASU0V6BHTCpRr4D/io1v03i+y56nZgqh12JFydQRC+KCsIIotIppkkzmbr+xAcKHxmPfvo9spEBH2591+SOSX9JvJYx1rixy0o5DH8EYwFQMZdTN0yGI0YHkHdRe6CaV4SyRE0WC9hoedaBKhtxJ8UbE3pgnBkEGRN0ZgdLvcpiVINeQhrgRs4+BYm8ztTf32EGVXZmmXMnEgBeCyZeom567FTQJ43ywRETkhY4BNyMYZlGd+uWzHfydk8ur/xiYLbTuCD5ba7NJBRbkrK6W6NGJLrH986jlh5S+OyGD/K4v7dnvbyvywyqma903YcbKnmgSeXjZOJtfVkRvTLEDdKHi0FdKBrAyMxtNkzcE11mX4Ub5cnewML0H6RU1DgDtTT7zdjSICUNhwQQddz02kmqkaoDg+8C3DYrqHJHh0hMhaPSIWAvk4beeGA4bRz+UkV2M4twY97b3OPeAc+vczGUGeRYP2P4Xd2thaQ7r9GSjB2A8sRtqZQx1NISTbad1mrvmirYP0acqtKyUXOJrFQq+hHS7F+DLwrGXgrZ9HkgKyMl51RB8jJngN6BrGxfo50meznyA2QlDVXpXqqzT/LyAXoE9IJSD3h6ixiRXtVLqmVe8jzbsH8M304eNwxUEClr6gFPZXpRpl+A0wzBrjTwHRna1nSqtYHWfGvWcH1dT8ZtW3misvwypG088KR+Kam+hMokc36Rg0JC9vR4XfG5wE79jJ1P9+zOui8jxhPmRhU8ABQpYwjfMDcDeOg2bmMFyMkpU2CNxdLUvFZZoO/wty67S9jQcvHzZGBGLbBTQL95FK5ixucRvr2qN+6GfLFVBoWgsE4iKY/nyyd8Z63CD5kf2RkAQhkVr+RLkJmMARCQFUNEj30sLVzdotfh5Rutd/+OJLQufOdiLahEehV6rMNasConFnEck6WBRHeJSqDRLBQkNwVWHFsW8WnY+bCOMYu04AQ6iGhpUBXgAVM5cboW2m0gsJi4jfBXbdaDJBUTnGw6bvCYDW/fI51o2/TtjcRWUp60bedtsrp/DbXcIRtkWRzC+lhSXJY772BELB6VXdjdLUGdI6DLJuaWUDN5hSpvY5SIomXjnF+Eu7FaYzmSx8MzEno2Cqt+6+v1I5p5RGE6VVDWxirFjmgAMQODLxVCEQBC2+SokH74GWeV5XmsoG5qFfU0EJVpA0+XxeqGm15U+yHg9IILQf6sbxpXdRFaX4apKfjYSJqLmFhX3lonKJIqUaY4zFUkR+v0q2EDq2oi00M3GG5UphunJmt32c4xZmyrOLvYMT6XQmAajqfEJXuZrJqsPX/AbIdU5XHJcgEtNHP2zgaAbgPX8WzunyIeX7QoGi15NON40YZJGMhkTucaaBKW1gVBybAuSLs7FMe4NRdRLO3b5WmVhrH8eqkaHKm9z947uaiJMGegqqERItBE0pYzW+XPIlTb0Uzxwmgzh8We1RcbJi1VUxqk40T6vPYrwGQZjDZ2F238PN26tp3yrf1+5POjql2SQhbsfFSbtvX6YYkCoEuFO3A2x9QN+jYSvZg4bbmLFcd0a9sQA5jS9qb2TwE18Z7WscNOYkJ1QzyPA4ORIj+YxBnyOvTJ1VeEw7HPYhXbIubIzSqM4NlGwbqk5RlSHrbNXIHGJPr+SU2paphS0lV5S23OH6UnDGHbD/sS5VAwN5XA90pzRMe1ehMPCRQ61yYWaos6Qrdw7wpVBH9kSu+Y49TNRC+clIaIp8B4QP1YVWkoR5qE0cWvNK1Us06YyBhMU9ElMd+M2+rsWCPWZSgoQ9dRNs13fFxAsErJQHFG/yOw16KYNS2ZwkP5CWGdZt/JeCH5mdi3LUKrouY3erZXSnKhNK4jWkX+7wt6cTFg1NqIfXSXKasOiGVUI/kZR6nLZTLFqxRXGA865f0p6gj5e4AUEJfE1CQDikiJC2WTMAR6k/njPqBK2yqCXFqKlaJ5YO0X8zSsNF56gR0TIVQhVIgXjA16GbT9TNG2wAck3sbuU51al6nhGCyZ+AU1Q0HeTEoSl0Szy8Iy1RE5wBCDqqOlPPV5AaD0Pzzkp+KzfchcxTQ/2u6pGn8G8sicNY4aHN91pCcl4uI6V1JPNTunjqSZwePjDdlUO5KhKEuQFgMdHCthxwZjJily5os21jSZ4YRz/xbenGWsPvSgnUaSrZ7TzbWKpVVcjlpDNU53Lr4IhfkNRfhjDeSRBd2BIQRL+XW6XSql/zn5rptsR6yXYcWoTmVqBUBWXcnsDlBGG4TpwTuFMNJ8yWgqGAyKfof/6L4lA/JcdDaq93l+jJAGa7+FNtT7StYHlfJPfukpJtr5hWnP8I4H1buTHlfaPIdEbWUKZfM8gmejwufLUzC50a+MBCrvlu0mRxjL6hyVJ1WEfUuGhuBuVQYyGUlDwoKYKglKwwW0RRNlVklkGC4aLt5U0yaL99ZHx0pk/xhpVCJ5Zr6AlDIlvT0rEbQXi4pYAw7H61mIvAPKmFraiSaEYizccKcLdn5Ud0M/fxlvKbonkWWZUzy46KuKSUXMPum4Nx64ydZJjOLNlMVvX9XzW7I5lcnVIBfQlrrslJHxkYzzor8i9ckCBT895aMHdYnetGPi6Ha65VyXbRZh7VSYYT0Q4UI1ooUZhipYmoOTzLkn4WCDR+0+WOJUSUMPQ1kI7e5jnAuzZZcm6Zh48hpS8DNps5kauWrQAXQlesAGS/ZodhQR0iNk63hNwrNZ8L4KnQ7cIHk1Lclm9WMKfoEsBEjMK1m9eFXSTnMV7K+OuWK594A6ZzprR6yJ5rb8N+n7rjZlFPfLObBUrmFwIVRHu8mU8GscpMhjKq8+g+F18+Xy7sKR0dIsJ/XsIBgunneVOgS5zYKdKsUmN0T7BAoJRobP+pxkbJZt6UpWR56XiDUqWR24AdP+DIiTK6I+rKC2GANxHA4M1v//EYGIc5Zx9UorGw1BVECvsvNO/ZgG6jVoCAirgcpxwJNS3HyPVJqhmpLKrUXtJXKd5DI2Eyg+JuqjIsMEqldG+pigRgRXJ6ieS5bJ1eFYXjSTncSi5Munon2twoezaEc0jA8ho7Bqh2UHq3YwOyNdqVLVSe+o9sB8/Hl7wjSVefS9rJtox7K93H3OobCkPipC+bWcVcgP/ksZ26MPPMLHLNHwwEcTNcz3TaNzsbqWYS5lbZM9UmoISjSkGU7/f8YoyKkjUIas1BBObEajDNWhYEIiz13T6HJAy3m+umzUpaxmLlkte4GGNwi8mHYIkL3AUk4Ss3EzS8P1IXOJ0NatB+i5aN4kTOoJSqH0gLDNjPeBUEoWI86j7+7YiaDRz+ZSQRZCcHH2Seoz1Og39PdEoOI9wdBsLwo4toG43mMXIzYeVepaWp85t61YxDPsxZqat7f18qYtr7Qza70SV2LO5Zqx1otwnoJaqJjogYi117p5qoNlNujb5MH6dxQFyzjOnXQm6TYU2cYrcRwMK1nRugJ9CHRxGtmkJaXN1lVLJmJ9C2Rckp35LYKc6eKEWj1d9JDhMAJUrzIEABHYx0uqUSaLFAyxfsHZHQS/9oz0bSdjwjppz7mCTnboNcHXUUSeOVdRRN4NBNiWgXAbrSiIyjJ7fNXq2ZbLH8W0ERqzKs7TssMrgQo9gUQBZ6rKIL+PQ9uGaHgo1u++i6AXHGFZGzp/HDaPtFoyf+1gw+bVqXAI0D4qnlLDQQBsjEkC0mBj8UbhL88Mv7p7pfmLbYhXNZdMOKOpWDADKJoC0dN6KbD3T0nvuuQVYxi9f/dsKb2vwoQh3DboopIMmVMVnl3+EkiDpZYLR7CYjbBv5Ye9NvWweFkjGQjpHUlXO7Ed98AFMi45IeZQCzc76m76hPF/sOkcQWDsUBq6mxRcKdls494hh1UvZn5bz93buA2etGg99x65VSUDZsXRK1sIP3vzq7VKsVhRISqdHH2sCYZKxnBE2OKn4ly8JK5Of0UqJ1OoDLmFNJVQiXWO3XNOUUVIPbOd9FwTrFWksyMrx20qoZ2saBuOK33XHTy5BFVhZTaOCzyon5Xz7i6ZFMIdY/0SxZdiiJcTJm7iV6wVHTFxID2Z/cyMg4H5VXFKxlhzzRDKMuBRw2d4btdsq7h4VGiritZ1qt/OiShtJeKuAvQMLKOEtMfRZaYVgelQFdb1Xz7dku1glNMtoQFCJCCNu8rn3YTW0RAIaGChJqAeWV1oG201svaY461A2eUt2SVt5IRzoW405XupA+dixv+irWLE+05CeH9nwiIFk4BXhsfjnZr15S3Zl+HPBrWZOvOR/Stl40J2CA31FyqnAGcjI2q76Kblpd4TJl2JQmnpOR2XeOTO73BGIHxBsV6M3jMdL40GEaAzRrZNEp9WNE/qGHpHiMkhm0OZ3JFTzrFrW8aQ8jsIAJRs86Oi0tUOzAJVAEgBLzwpgJQIGXgGaF4COqbe1zufoUtVsO1KSBeLMqCPEB+grSE5hkVTClzQhCwPZQEpMU1D9lBDBf9Q/VBvhQjOgNu6KTbo4raB80y9NrzwmTNQGNizcRsQLkHWKvhTvtCuzS0HE9eCFfF3woaXsnVz8hvTcWVnOvo67XpJAw0cPgLTMeKch2AaelmTvPGqxTbGbdwzN6Xu3nX+wpHRHLRy/N4Pjozk7Wv40SvAY+p2j9piFib1fsD5nGlIPnJxl0EZR7GoDBZJQnBe6X06ioUkw2QZ+MaXZf9EUdaUTcbl1vPojAgvmzTvBiLcpjoEXhCcxBcYa+zf9X0nsIKP4SwFzaq6NIEVnOaYvGXC4T3oY/DHjtrBMyPSahKT73mQYKXFQZAWUi4p/VWpUNvW68pMg8j2LZXsvCXhggjPfJz8U7oXizq64MfO0QRU+KIEfoyqBrV+ANPNm4AK69a76vnKhvDHIahdH4JeKqq8yYxOx05o6cIJfBcaRwmMpO4HSxuFXTYsttyOH12e17Un4STxraR1HSOVKf7Ofreq5JEk36oab9YVQQnCiJ9CLvL8noSLK1c4FK65sGKM6nhJJlmwwjUWOplQcx8RtU6NNEAcpW3CdY+IxnY03CBdHqnJHKwIqsoKyx1eV0fnvKJ+giD4iZmvEoHCBkZt7TW13f7pLLR9PM1VbNdE3T8p/QSR0YrHvNGhjcoHidN4TRnrsajNJxl3wCOR8bA7m56noNoSlPH1hCSwm1g5lmYC3+jrqV8wGCm+UV57hfFxOrEhsVna5Z81VLZFRDeCeNzBx0r55MxEHw9t1icN4KMDZQitcS0Cptg5g3jwJotwO8lwTP72/bjCCEEtnCvVDNW8Q6V1KBABzxQ0WkkkWzP4oExPRWsj0/90rtOWb505Viyyjme0oBerSSpiHqoNNnBMyx0BanpuDCviGBfOdHiWrI+ZzrYf0o6FiZJDPOvmMMk6vmj1Hg2SzmpZHGVaYTlnq1LvPHkuFdsyJ/NDXLLtbE+1i+Md9VRKY+oJHlfMVLQpRHVsrkR1zlHAOje7m4+jFPsiwklAMCjzl9a4ZDHS8r0pR7w//qyOvQqjpeViAujPJhUpwPJsO3r5EnUXIkgKICTY9wHSgUAZhza9B1eHg1ZOuYVuKk+RJhOKmNlnfdZubktJRvyRp67AZ1a5jmRjtDVwcgA1bAxRt4Nd3aKJHZvNadwOZ4jOl0+Bohy5nvtjqrSYZMZk9phSNEXl8qDOHDiISN3/MWyE7ppkQ3TKvcLQOVCU00Tx7jlfKLMOa4ZsnvM1+EmHZvvf2Viem5IhNpYXBuNUntto+7fI5xJRO9yU2Cy8iSAsCmcUC1nZ1I8uw0tbxgWh8HaP8J8pj/6uNjuHinL0R9tCBZsBlWU7FEO8Or2bdx+GWnFMCznZMZvVq3W2pIY82+7+iTC0bYik44asGYqoAHCgtCW6ZYia1RRtlF2YUS+OgRIsuUVneLjc9dCOeW/b/OrGIFyb73mBJIbpheCa9lwnaYrVb2/0KRi05dGEH2OBnP2SInY23+Gv05YpWEhXn3dPhYzlOArMk/QPTBmrkgyrt14e+PWKUdfSeBDuXtv8WKNuq9BgUf3R876wmVhUQhEOYTRfRRM8UCox02KRovTTHALVvSRr8N6mNscStS0fLD9QA9mRcGWnZ05qcNYpKxIOZR+Mmqs8BsYFlnIKKlRGrMjKUJ6Q8LYcqFw6AeHCB6QNWEuBcADM2mMOIEIEr5kmONMDgtZD4WZ3Nz4nee3on7LxwgMzGSpakvcKcke1QVHqlSDJY+IgCGN+CnTgvpRqgk/5uSC7fIml4rgmuwOpW85pUsH+HRqWqECCQt2OjkuDATH0LFkV3gqrH8uxbRGrv7wLWnIVnj1/NVxyOtoDKTKhCheLwlCWN4V+ilhNrc+7Z7Rz25B01iqhgWMgWcm1oVXCaW66mkZ2V5uWprJKU2Y/0sLkTJXnVLOdrHA3hww2JtSzujVzyKgur8ZEmuNFILcNGRt2VAuZheFHlKJPoMW+ihBPnD5KojNiacqrhmCZc3+IShFtU7N/DeLmPc1Q89A5PJYnz6BFm/IxQ1nzMMuSqMCFWatssywRukFK+Ag0c6EcWT+zMsv0SgELIDhk0N9aDJ2TrLWK5E+y2cQsEsdEKWVO2WxsBmpgiqmjya3wMz3ahmx2NkNec32S56TXx6NqYC1bEQIfGZ3cjTTkBQqsEwMgYXhmvUn1OTbTU/Kyg4LP8V7m/lKZngXV64bsObUs0ek3r4JxPk+XDig0K8IYjJGiaRYkoGS5nuZ3lKbxxDvYJZrZy4RvniMlJWgNoGafjtYpqh8TVTNF9oGvZA6X6b4zcY4Y2zrSSddddWw8vQwNwcG0kY79IcmgnBDFIzxkisc4NRUOxZSFyv2c6Dnp3JYxKLhTr4QaCrmU6cVFp9/AIQpQ4iMg5sBqrac5brYzE/eQ6oG0Tbhr+l/K5HhK+eamqLtPoTpybmY90IQlKgrVhBfJGhNJZFFjoL9Z6nALiXcU3EudvHpnQ3RgNa0oZDnt0RBEMnsiL04Vhaj2faKGS24YICATQqG6FBgeplr2oCHl1LPKNM7jdTW6PDgpjYkniAZILAK1/agDMYzzeGD0gKYfcTq6FKlbAI0nC6xK1S/qyxdnFli97spmJB8hLyrcQUGDYGA4FH8NNZrhp4/PeGvbBbjcefyMg8xoWdGKS4KqZHCEAe+nzmemrONO2cCL4c1rJaK/f9UuWNJaRjwhjGqpKEN31QcKOpInBAAvJoziuayob1sjs3TokGQSyXd536UY2BS45DTvH3TgTIY9rygDgkQh1MSR7nVMJgTENj8oOpltmtqm90B4rs/8atNIuGjIoBHBiX+pY8rdJx31EfQXUSdGdtxZJ88p96wEM/jZNKVgPlUEm5TNiQTBDiFJjokasK4SjtaWAGghmZ5g+jniZoHgvE5Y69TTLSP5gin5o0zyVhPQzVDQ3+118KgJlNaHCBbJFvLKEafpp9UEWHJMddJfy/PzKieq+uF5LephrZkw7aNrCqPtnzyPBiuTQPOWMVcixiEjqnSr2ne+J2sVM3btoCsGQtEdyXO6haafSK2iNYyI8kG3Yjgm41WLeQ0nvgNK2bSF4rQeuFyURldaoT8aB9jpPKvwlnjV51gahnS1U/JWYy6cnu/Jpjt1Yh+Q8JmboinZIrn3EodbXImgzKuYeCYLwi+pJWQBCBvuVnngUr1vB1RO1gME032e5QkH1hNNKZBORDjfmxcX6H95SPqww2ypRnyPa3I7SPrEC9eyUSYEorhpcC0jZ3gLyniKDHlVCIbOzNBM0QZesXHmO0LdpUuzZJZkcIXqNpln+u6ukivEd64OWMcBDqWzjIlXm3NeG4xPYeX7zNJpm8qSN1ynbAPmTU0QzCgkKzc4Gu7e0y6kGtT0iaIM6C+HJkWROGWWyjP+uj7GULtPh6YV9hmlgWOnBpJklO5D1ImJoilarEEUaoBcKPnLHLO5HRA8v2vra4w5xXDAgamK6yl9Rfiukgv0IrsMpzDQr6vvQVgQLP4wgvxnJNR7eW64H9bhbmvXHAgFz3m0oHTghGeeDMOiqVecQRTProVyWpI/G9O26Y826Wz7WEd4Q1KbAXcOOCFGDlejcwVOGzifAKAkz+ESUs0kR+uq3rq0nSuUzSyuHIXAkiZa1DaPzbTNU1V/cQ4yoG1ieHQqS1Yc4z5iybC/nyA4FwbrW0g7ehCwkQ6NoNzGdDV8k7Vj4/isVfr61JO4OfgSEKnQ2VG50+a9xK5F0E6X5hXqeKKweTSvzDelkmeJdIfhXegcOEQpCpO0ZOfiTvz/elvXKtp5moLeFI3abHyoOHXUXDAijt7WRJ+BHrymJq6NS+qouVL7nl/XepwDAy3lYFrilPRJri36pDR0p2lJjxd+WmrTA1VvK6fUxAza2r2a4uVk1JOXTTx4WUN1DuczGYusBRv3QejCFEHi24rvMnUQQLesIU6cSZ5B6SHcUgbCEzezusI+WlYhMBauBaAfEmE46tQ5IKiS/DbuQ3w+uE379DkFbSeAPm/muGUosMI3uTm2cVRnCQyEwpkO4ifGHV9eYGr4pApx4RkR3kzikjF03FYVgMhofDqnq7CZTUAawMn1q0MXrAxIWEefslnq5Dvi/iUFPRnmbSqbZEZHOq2zfOagXfDOBJEDeZ/K3RIKRzuTlSS24K2dV97Tt9l80WK6zjYXBVYqNUfNkSwV60nEhoCuOh3gt02rDgDkOcv2wn/xBCas86ljDKvPS2o0LC0BrFTr8+ZG22QOKqZKTVquQjbtK2rztqUD9jjt0zYPrphPdCWyC0Vn79UN1o2hOBq8o8GJFw1vCeltxt2iXUCMs4j3z0nXcmcbbktpq04s6XI8oCR4FBPG00FFrVrZrEkz6Sra9E7WTGvP3K21jJkIL7p6UskpAjypGl09g5oFmCnpbRVanYgrSgYeVUFPjcRYuO49AM9mEudONAQWiOp+imlIpSFUlq0qKi5KQ0CHqUf1tpPmQ5oGvSZ7//8B", BinaryEncoding.Base64), Compression.Deflate),
+				    Empty = #table({"Content", "Name", "Extension"}, {}),
+				    Probe = if UseDemo then [HasError = true] else try Table.RowCount(Folder.Files(DataFolder)),
+				    AllFiles =
+				        if UseDemo then #table({"Content", "Name", "Extension"}, {{DemoCsv, "forcedecks_cmj_demo.csv", ".csv"}})
+				        else if Probe[HasError] then Empty
+				        else Folder.Files(DataFolder),
+				    CsvFiles = Table.SelectRows(AllFiles, each Text.Lower([Extension]) = ".csv" and not Text.StartsWith([Name], "~$")),
+				    ReadCsv = (content as binary) as table =>
+				        let
+				            first = try Lines.FromBinary(content, null, null, 65001){0} otherwise "",
+				            delimiter = if List.Count(Text.Split(first, ";")) > List.Count(Text.Split(first, ",")) then ";" else ",",
+				            promoted = Table.PromoteHeaders(Csv.Document(content, [Delimiter = delimiter, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), [PromoteAllScalars = true]),
+				            old = Table.ColumnNames(promoted),
+				            keys = List.Transform(old, Key),
+				            unique = List.Accumulate(List.Positions(keys), {}, (acc, i) => acc & {if List.Contains(acc, keys{i}) then keys{i} & " #" & Text.From(i) else keys{i}})
+				        in
+				            Table.RenameColumns(promoted, List.Zip({old, unique})),
+				    Tables = List.RemoveNulls(List.Transform(CsvFiles[Content], each try Table.Buffer(ReadCsv(_)) otherwise null)),
+				    Combined = if List.IsEmpty(Tables) then #table({}, {}) else Table.Combine(Tables),
+				
+				    // Keep CMJ rows only when a file holds several ForceDecks tests (single-leg CMJ excluded)
+				    CmjOnly = if not Table.HasColumns(Combined, "test type") then Combined
+				        else Table.SelectRows(Combined, each
+				            let t = if [test type] = null then "" else Text.Lower(Text.From([test type]))
+				            in (Text.Contains(t, "cmj") or Text.Contains(t, "countermovement"))
+				               and not Text.Contains(t, "sl") and not Text.Contains(t, "single") and not Text.Contains(t, "rebound")),
+				
+				    // ---------- map whatever is there onto the report's columns ---------------------------
+				    // {output column, accepted export headers, type}
+				    Spec = {
+				        {"Name", {"Name", "Athlete", "Athlete Name"}, "text"},
+				        {"ExternalId", {"ExternalId", "External Id"}, "text"},
+				        {"Test Type", {"Test Type", "Test"}, "text"},
+				        {"Date", {"Date", "Test Date"}, "date"},
+				        {"Time", {"Time", "Test Time"}, "time"},
+				        {"BW [KG]", {"BW [KG]", "Bodyweight [kg]", "Body Weight [kg]"}, "number"},
+				        {"Reps", {"Reps", "Repetitions"}, "int"},
+				        {"Tags", {"Tags"}, "text"},
+				        {"Additional Load [lb]", {"Additional Load [lb]", "Additional Load [lbs]"}, "int"},
+				        {"Jump Height (Imp-Mom) (cm)", {"Jump Height (Imp-Mom) [cm]"}, "number"},
+				        {"__JumpHeightIn", {"Jump Height (Imp-Mom) in Inches [in]", "Jump Height (Imp-Mom) [in]"}, "number"},
+				        {"Contraction Time (ms)", {"Contraction Time [ms]"}, "int"},
+				        {"Peak Power / BM (W/kg)", {"Peak Power / BM [W/kg]", "Peak Power/BM [W/kg]"}, "number"},
+				        {"Bodyweight in Pounds [lbs] ", {"Bodyweight in Pounds [lbs]"}, "number"},
+				        {"CMJ Stiffness [N/m] ", {"CMJ Stiffness [N/m]"}, "int"},
+				        {"Vertical Velocity at Takeoff (m/s)", {"Vertical Velocity at Takeoff [m/s]"}, "number"},
+				        {"Eccentric Braking RFD (N/s)", {"Eccentric Braking RFD [N/s]"}, "int"},
+				        {"Positive Impulse [N s] ", {"Positive Impulse [N s]"}, "number"},
+				        {"Concentric Mean Force [N] ", {"Concentric Mean Force [N]"}, "int"},
+				        {"Concentric Impulse % (Asym) (%)", {"Concentric Impulse % (Asym) (%)", "Concentric Impulse % (Asym)"}, "text"},
+				        {"Velocity at Peak Power [m/s] ", {"Velocity at Peak Power [m/s]"}, "number"},
+				        {"Force at Zero Velocity (N)", {"Force at Zero Velocity [N]"}, "int"},
+				        {"Countermovement Depth [cm] ", {"Countermovement Depth [cm]"}, "number"},
+				        {"Eccentric Braking Impulse % (Asym) (%)", {"Eccentric Braking Impulse % (Asym) (%)", "Eccentric Braking Impulse % (Asym)"}, "text"}
+				    },
+				    Cols = Table.ColumnNames(CmjOnly),
+				    Resolve = (aliases as list) as nullable text => List.First(List.Select(List.Transform(aliases, Key), each List.Contains(Cols, _)), null),
+				    Shaped = Table.FromRecords(
+				        Table.TransformRows(CmjOnly, (r) =>
+				            Record.FromList(
+				                List.Transform(Spec, (s) => let k = Resolve(s{1}) in if k = null then null else Record.Field(Converters, s{2})(Record.Field(r, k))),
+				                List.Transform(Spec, each _{0}))),
+				        List.Transform(Spec, each _{0}), MissingField.UseNull),
+				
+				    // Exports set to inches: convert jump height to cm (the report is all-metric for lengths)
+				    Filled = Table.FromRecords(
+				        Table.TransformRows(Shaped, (r) =>
+				            Record.TransformFields(r, {
+				                {"Jump Height (Imp-Mom) (cm)", (x) => if x <> null then x else if r[__JumpHeightIn] <> null then r[__JumpHeightIn] * 2.54 else null},
+				                {"Bodyweight in Pounds [lbs] ", (x) => if x <> null then x else if r[#"BW [KG]"] <> null then r[#"BW [KG]"] * 2.20462 else null}})),
+				        Table.ColumnNames(Shaped), MissingField.UseNull),
+				    NoHelper = Table.RemoveColumns(Filled, {"__JumpHeightIn"}),
+				
+				    EccDirection = Table.AddColumn(NoHelper, "Eccentric Braking Impulse % (Asym) Direction", each Asym([#"Eccentric Braking Impulse % (Asym) (%)"])),
+				    ConcDirection = Table.AddColumn(EccDirection, "Concentric Impulse % (Asym) Direction", each let n = Asym([#"Concentric Impulse % (Asym) (%)"]) in if n = null then null else Int64.From(n)),
+				
+				    // ---------- athletes: tidy names, number them, optionally anonymise --------------------
+				    Tidy = Table.TransformColumns(ConcDirection, {{"Name", CleanName}}),
+				    Valid = Table.SelectRows(Tidy, each [Name] <> null and [Date] <> null),
+				    Names = List.Sort(List.Distinct(Valid[Name])),
+				    Index = Record.FromList(List.Numbers(1, List.Count(Names)), Names),
+				    WithId = Table.AddColumn(Valid, "athleteid.Index.1", each Record.Field(Index, [Name])),
+				    Display = Table.TransformColumns(WithId, {{"Name", each if AnonymizeNames then "athlete_" & Text.PadStart(Text.From(Record.Field(Index, _)), 2, "0") else _}}),
+				
+				    Deduped = Table.Distinct(Display),
+				    Typed = Table.TransformColumnTypes(Deduped,
+				        List.Transform(List.Select(Spec, each not Text.StartsWith(_{0}, "__")), each {_{0}, Record.Field(Types, _{2})}) & {
+				            {"Eccentric Braking Impulse % (Asym) Direction", type number},
+				            {"Concentric Impulse % (Asym) Direction", Int64.Type},
+				            {"athleteid.Index.1", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

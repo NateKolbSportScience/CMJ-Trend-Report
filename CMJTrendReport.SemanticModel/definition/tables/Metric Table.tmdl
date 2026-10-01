@@ -1,0 +1,643 @@
+table 'Metric Table'
+	lineageTag: dc07a243-68b9-4965-8474-60933d58b2dd
+
+	measure 'Selected Metric 1' = ```
+			
+			 SWITCH(
+			    SELECTEDVALUE('Metric Table'[Metric]),
+			    "Jump Height (Imp-Mom)[cm]", AVERAGE('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]),
+			    "Peak Power / BM [W/kg]", AVERAGE('rtp_latestCMJ'[Peak Power / BM (W/kg)]),
+			    "Eccentric Braking Impulse (Asym) %", AVERAGE('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]),
+			    "Contraction Time [ms]", AVERAGE('rtp_latestCMJ'[Contraction Time (ms)]),
+			    "Force at Zero Velocity [N]", AVERAGE('rtp_latestCMJ'[Force at Zero Velocity (N)]),
+			    "Vertical Velocity at Takeoff [m/s]", AVERAGE('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]),
+			    BLANK()
+			 )
+			```
+		lineageTag: 493e751e-eddc-4286-8c0c-8cea76e0361a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Selected Metric 2' =
+			
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			
+			RETURN
+			SWITCH(
+			    SELECTEDVALUE('Metric Table'[Metric]),
+			    "Jump Height (Imp-Mom)[cm]", CALCULATE(MAX('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Peak Power / BM [W/kg]", CALCULATE(MAX('rtp_latestCMJ'[Peak Power / BM (W/kg)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Concentric Impulse % (Asym) ", CALCULATE(MAX('rtp_latestCMJ'[Concentric Impulse % (Asym) Direction]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Eccentric Braking Impulse (Asym) %", CALCULATE(MAX('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Contraction Time [ms]", CALCULATE(MAX('rtp_latestCMJ'[Contraction Time (ms)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Force at Zero Velocity [N]", CALCULATE(MAX('rtp_latestCMJ'[Force at Zero Velocity (N)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Vertical Velocity at Takeoff [m/s]", CALCULATE(MAX('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "CMJ Stiffness [N/m]", CALCULATE(MAX('rtp_latestCMJ'[CMJ Stiffness [N/m]] ]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Eccentric Braking RFD [N/s]", CALCULATE(MAX('rtp_latestCMJ'[Eccentric Braking RFD (N/s)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Countermovement Depth [cm]", CALCULATE(MAX('rtp_latestCMJ'[Countermovement Depth [cm]] ]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    BLANK()
+			)
+		lineageTag: 159bdabf-8135-4f3e-93ed-9f4114f72d4d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Selected Metric ZScore' = ```
+			
+			 VAR MetricValue =
+			 SWITCH(
+			    SELECTEDVALUE('Metric Table'[Metric]),
+			     "Jump Height (Imp-Mom)[cm]", MAX('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]),
+			    "Peak Power / BM [W/kg]", MAX('rtp_latestCMJ'[Peak Power / BM (W/kg)]),
+			    "Eccentric Braking Impulse (Asym) %", MAX('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]),
+			    "Contraction Time [ms]", MAX('rtp_latestCMJ'[Contraction Time (ms)]),
+			    "Force at Zero Velocity [N]", MAX('rtp_latestCMJ'[Force at Zero Velocity (N)]),
+			    "Vertical Velocity at Takeoff [m/s]", MAX('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]),
+			    BLANK()
+			 )
+			 VAR MetricMean =
+			  SWITCH(
+			    SELECTEDVALUE('Metric Table'[Metric]),
+			    "Jump Height (Imp-Mom)[cm]", AVERAGE('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]),
+			    "Peak Power / BM [W/kg]", AVERAGE('rtp_latestCMJ'[Peak Power / BM (W/kg)]),
+			    "Eccentric Braking Impulse (Asym) %", AVERAGE('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]),
+			    "Contraction Time [ms]", AVERAGE('rtp_latestCMJ'[Contraction Time (ms)]),
+			    "Force at Zero Velocity [N]", AVERAGE('rtp_latestCMJ'[Force at Zero Velocity (N)]),
+			    "Vertical Velocity at Takeoff [m/s]", AVERAGE('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]),
+			    BLANK()
+			 )
+			 VAR MetricStdDev =
+			 SWITCH(
+			    SELECTEDVALUE('Metric Table'[Metric]),
+			    "Jump Height (Imp-Mom)[cm]", STDEV.P('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]),
+			    "Peak Power / BM [W/kg]", STDEV.P('rtp_latestCMJ'[Peak Power / BM (W/kg)]),
+			    "Eccentric Braking Impulse (Asym) %", STDEV.P('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]),
+			    "Contraction Time [ms]", STDEV.P('rtp_latestCMJ'[Contraction Time (ms)]),
+			    "Force at Zero Velocity [N]", STDEV.P('rtp_latestCMJ'[Force at Zero Velocity (N)]),
+			    "Vertical Velocity at Takeoff [m/s]", STDEV.P('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]),
+			    BLANK()
+			 )
+			
+			 RETURN
+			 IF(
+			    NOT(ISBLANK(MetricValue)),
+			    (MetricValue - MetricMean) / MetricStdDev,
+			    BLANK()
+			   
+			 )
+			```
+		lineageTag: 8eeb2be2-cbf5-42cd-95c8-51b8940df730
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Selected Metric ZScore Color' = ```
+			
+			VAR CurrentAthlete = SELECTEDVALUE('rtp_latestCMJ'[Name])
+			
+			VAR LatestDate = 
+			    CALCULATE(
+			        MAX('rtp_latestCMJ'[Date]),
+			        'rtp_latestCMJ'[Name] = CurrentAthlete
+			    )
+			
+			VAR SelectedMetric = SELECTEDVALUE('Metric Table'[Metric])
+			
+			VAR MetricValue =
+			    SWITCH(
+			        SelectedMetric,
+			        "Jump Height (Imp-Mom)[cm]", CALCULATE(MAX('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			        "Peak Power / BM [W/kg]", CALCULATE(MAX('rtp_latestCMJ'[Peak Power / BM (W/kg)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			        "Eccentric Braking Impulse (Asym) %", CALCULATE(MAX('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]), 'rtp_latestCMJ'[Date] = LatestDate),
+			        "Contraction Time [ms]", CALCULATE(MAX('rtp_latestCMJ'[Contraction Time (ms)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			        "Force at Zero Velocity [N]", CALCULATE(MAX('rtp_latestCMJ'[Force at Zero Velocity (N)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			        "Vertical Velocity at Takeoff [m/s]", CALCULATE(MAX('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			        BLANK()
+			    )
+			
+			VAR MetricMean =
+			    SWITCH(
+			        SelectedMetric,
+			        "Jump Height (Imp-Mom)[cm]", CALCULATE(AVERAGE('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Peak Power / BM [W/kg]", CALCULATE(AVERAGE('rtp_latestCMJ'[Peak Power / BM (W/kg)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Eccentric Braking Impulse (Asym) %", CALCULATE(AVERAGE('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Contraction Time [ms]", CALCULATE(AVERAGE('rtp_latestCMJ'[Contraction Time (ms)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Force at Zero Velocity [N]", CALCULATE(AVERAGE('rtp_latestCMJ'[Force at Zero Velocity (N)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Vertical Velocity at Takeoff [m/s]", CALCULATE(AVERAGE('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        BLANK()
+			    )
+			
+			VAR MetricStdDev =
+			    SWITCH(
+			        SelectedMetric,
+			        "Jump Height (Imp-Mom)[cm]", CALCULATE(STDEV.P('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Peak Power / BM [W/kg]", CALCULATE(STDEV.P('rtp_latestCMJ'[Peak Power / BM (W/kg)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Eccentric Braking Impulse (Asym) %", CALCULATE(STDEV.P('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Contraction Time [ms]", CALCULATE(STDEV.P('rtp_latestCMJ'[Contraction Time (ms)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Force at Zero Velocity [N]", CALCULATE(STDEV.P('rtp_latestCMJ'[Force at Zero Velocity (N)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        "Vertical Velocity at Takeoff [m/s]", CALCULATE(STDEV.P('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]), ALL('rtp_latestCMJ'[Date]), 'rtp_latestCMJ'[Name] = CurrentAthlete),
+			        BLANK()
+			    )
+			
+			VAR ZScore =
+			    IF(
+			        NOT(ISBLANK(MetricValue)) && MetricStdDev <> 0,
+			        (MetricValue - MetricMean) / MetricStdDev,
+			        BLANK()
+			    )
+			
+			-- Flip Z-score for lower-is-better metrics so red still means bad
+			VAR DirectedZ =
+			    IF(
+			        SelectedMetric = "Contraction Time [ms]" || SelectedMetric = "Eccentric Braking Impulse (Asym) %",
+			        ZScore * -1,
+			        ZScore
+			    )
+			
+			RETURN
+			    IF(
+			        NOT(ISBLANK(DirectedZ)),
+			        SWITCH(
+			            TRUE(),
+			            DirectedZ >= -0.5,  "#2ECC71",  -- Green: within 0.5 SD of average or above
+			            DirectedZ >= -1.0,  "#F4D03F",  -- Yellow: 0.5 to 1 SD below average
+			            "#E74C3C"                        -- Red: more than 1 SD below average
+			        ),
+			        BLANK()
+			    )
+			```
+		lineageTag: 8dd63dfd-d9ad-4900-bf10-6c567914aa64
+
+	measure 'ZScore Debug' = ```
+			
+			VAR CurrentAthlete = SELECTEDVALUE('rtp_latestCMJ'[Name])
+			
+			VAR LatestDate = 
+			    CALCULATE(
+			        MAX('rtp_latestCMJ'[Date]),
+			        'rtp_latestCMJ'[Name] = CurrentAthlete
+			    )
+			
+			RETURN
+			    IF(
+			        ISBLANK(CurrentAthlete), -1,
+			        IF(ISBLANK(LatestDate), -2,
+			        1)
+			    )
+			```
+		formatString: 0
+		lineageTag: 4c7aa866-87a6-4998-a51b-c9957b98a552
+
+	measure 'ZScore Debug 2' = ```
+			
+			VAR CurrentAthlete = SELECTEDVALUE('rtp_latestCMJ'[Name])
+			
+			VAR LatestDate = 
+			    CALCULATE(
+			        MAX('rtp_latestCMJ'[Date]),
+			        'rtp_latestCMJ'[Name] = CurrentAthlete
+			    )
+			
+			VAR MetricValue =
+			    CALCULATE(
+			        MAX('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]),
+			        'rtp_latestCMJ'[Date] = LatestDate
+			    )
+			
+			VAR MetricMean =
+			    CALCULATE(
+			        AVERAGE('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]),
+			        ALL('rtp_latestCMJ'[Date]),
+			        'rtp_latestCMJ'[Name] = CurrentAthlete
+			    )
+			
+			VAR MetricStdDev =
+			    CALCULATE(
+			        STDEV.P('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]),
+			        ALL('rtp_latestCMJ'[Date]),
+			        'rtp_latestCMJ'[Name] = CurrentAthlete
+			    )
+			
+			RETURN
+			    IF(
+			        NOT(ISBLANK(MetricValue)) && MetricStdDev <> 0,
+			        (MetricValue - MetricMean) / MetricStdDev,
+			        -99
+			    )
+			```
+		lineageTag: ce6001b6-27d6-4b21-bf1f-1d7203ee8f2c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Selected Metric 2(1)' = ```
+			
+			VAR CurrentAthlete = SELECTEDVALUE('rtp_latestCMJ'[Name])
+			VAR LatestDate = 
+			    CALCULATE(
+			        MAX('rtp_latestCMJ'[Date]),
+			        'rtp_latestCMJ'[Name] = CurrentAthlete
+			    )
+			
+			RETURN
+			SWITCH(
+			    SELECTEDVALUE('Metric Table'[Metric]),
+			    "Jump Height (Imp-Mom)[cm]", CALCULATE(MAX('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Peak Power / BM [W/kg]", CALCULATE(MAX('rtp_latestCMJ'[Peak Power / BM (W/kg)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Concentric Impulse (Asym) %", CALCULATE(MAX('rtp_latestCMJ'[Concentric Impulse % (Asym) Direction]), 'rtp_latestCMJ'[Date] = LatestDate), 
+			    "Eccentric Braking Impulse (Asym) %", CALCULATE(AVERAGE('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Contraction Time [ms]", CALCULATE(MAX('rtp_latestCMJ'[Contraction Time (ms)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Force at Zero Velocity [N]", CALCULATE(MAX('rtp_latestCMJ'[Force at Zero Velocity (N)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Vertical Velocity at Takeoff [m/s]", CALCULATE(MAX('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "CMJ Stiffness [N/m]", CALCULATE(MAX('rtp_latestCMJ'[CMJ Stiffness [N/m]] ]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Eccentric Braking RFD [N/s]", CALCULATE(MAX('rtp_latestCMJ'[Eccentric Braking RFD (N/s)]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    "Countermovement Depth [cm]", CALCULATE(MAX('rtp_latestCMJ'[Countermovement Depth [cm]] ]), 'rtp_latestCMJ'[Date] = LatestDate),
+			    BLANK()
+			)
+			```
+		lineageTag: 1348b249-1a84-4e91-a2b3-15a1f9276fe6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'JH (cm)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0.0
+		displayFolder: Output
+		lineageTag: 028473e6-2e75-4251-9596-ad48c6255fe5
+
+	measure 'z JH (cm)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[Jump Height (Imp-Mom) (cm)])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: cbc027a3-0940-4a32-bbfa-e2b6a1dd0b04
+
+	measure 'colour JH (cm)' =
+			VAR Z = [z JH (cm)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: 04a0815f-ff48-409f-b44b-0edc73a59c44
+
+	measure 'PP/BM (W/kg)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Peak Power / BM (W/kg)]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0.0
+		displayFolder: Output
+		lineageTag: 5f2524c8-931e-4140-80e0-f446259c4b93
+
+	measure 'z PP/BM (W/kg)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[Peak Power / BM (W/kg)])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[Peak Power / BM (W/kg)])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[Peak Power / BM (W/kg)])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: 62d5043a-a37e-498a-b8d0-741a75a1d231
+
+	measure 'colour PP/BM (W/kg)' =
+			VAR Z = [z PP/BM (W/kg)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: a992442f-ecc3-4d2b-ab07-81d2f366ca68
+
+	measure 'Conc Asym (%)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Concentric Impulse % (Asym) Direction]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0
+		displayFolder: Asymmetry
+		lineageTag: 45419902-a240-4b75-9592-40105c247830
+
+	measure 'z Conc Asym (%)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), ABS('rtp_latestCMJ'[Concentric Impulse % (Asym) Direction]))
+			VAR Mu = AVERAGEX(Hist, ABS('rtp_latestCMJ'[Concentric Impulse % (Asym) Direction]))
+			VAR Sd = STDEVX.P(Hist, ABS('rtp_latestCMJ'[Concentric Impulse % (Asym) Direction]))
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), -Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: 9a303714-2a63-41eb-ac0e-cd1d25a52aed
+
+	measure 'colour Conc Asym (%)' =
+			VAR Z = [z Conc Asym (%)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: aa12d3d1-9a7f-47f0-bbba-536548321e0a
+
+	measure 'Ecc Asym (%)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0.0
+		displayFolder: Asymmetry
+		lineageTag: 2b85bd2b-cda5-41d0-b201-cf3d299f38e4
+
+	measure 'z Ecc Asym (%)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), ABS('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]))
+			VAR Mu = AVERAGEX(Hist, ABS('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]))
+			VAR Sd = STDEVX.P(Hist, ABS('rtp_latestCMJ'[Eccentric Braking Impulse % (Asym) Direction]))
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), -Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: f6ce3231-976e-46af-84f7-b7e0921e8e9c
+
+	measure 'colour Ecc Asym (%)' =
+			VAR Z = [z Ecc Asym (%)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: b4efa059-ad17-4736-9f5b-f552d4ce6bf1
+
+	measure 'CT (ms)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Contraction Time (ms)]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0
+		displayFolder: Strategy
+		lineageTag: 94fc4075-4829-4282-a40d-6323c3054b7a
+
+	measure 'z CT (ms)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[Contraction Time (ms)])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[Contraction Time (ms)])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[Contraction Time (ms)])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), -Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: cea7c0b1-767f-4db2-839a-1ddc2d16adb9
+
+	measure 'colour CT (ms)' =
+			VAR Z = [z CT (ms)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: c8b47279-555a-4b3e-8e50-d04ce79100e6
+
+	measure 'Takeoff Vel (m/s)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0.00
+		displayFolder: Strategy
+		lineageTag: 75f902f1-79af-453b-8235-603d4b62606d
+
+	measure 'z Takeoff Vel (m/s)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[Vertical Velocity at Takeoff (m/s)])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: 8a79b4f0-b159-4c84-b377-5c2da4d4a38f
+
+	measure 'colour Takeoff Vel (m/s)' =
+			VAR Z = [z Takeoff Vel (m/s)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: d77752d8-fdd1-4403-a244-d7ef57c7d705
+
+	measure 'Force @ 0 Vel (N)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Force at Zero Velocity (N)]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0
+		displayFolder: Strategy
+		lineageTag: c269a60b-47fa-457c-b383-87a95ef8f3e0
+
+	measure 'z Force @ 0 Vel (N)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[Force at Zero Velocity (N)])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[Force at Zero Velocity (N)])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[Force at Zero Velocity (N)])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: b07d544f-5daa-4f08-9fcf-9c7fdcf0c834
+
+	measure 'colour Force @ 0 Vel (N)' =
+			VAR Z = [z Force @ 0 Vel (N)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: 92e53439-d0bf-4ed3-81d0-dbfad5337d98
+
+	measure 'CM Depth (cm)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Countermovement Depth [cm]] ]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0.0
+		displayFolder: Strategy
+		lineageTag: b498b491-7351-4ec6-9c6c-110ae15d8464
+
+	measure 'z CM Depth (cm)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[Countermovement Depth [cm]] ])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[Countermovement Depth [cm]] ])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[Countermovement Depth [cm]] ])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), -ABS(Z))
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: 8ad602f5-727a-425d-a55f-e7edc5661ba2
+
+	measure 'colour CM Depth (cm)' =
+			VAR Z = [z CM Depth (cm)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: c9f414ef-be5c-4488-8365-50833177a251
+
+	measure 'Stiffness (N/m)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[CMJ Stiffness [N/m]] ]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0
+		displayFolder: Strategy
+		lineageTag: 3149943e-e8e4-42ca-99c3-b17a822a4773
+
+	measure 'z Stiffness (N/m)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[CMJ Stiffness [N/m]] ])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[CMJ Stiffness [N/m]] ])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[CMJ Stiffness [N/m]] ])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: d9ba464e-8762-40cd-b908-a0c78a863163
+
+	measure 'colour Stiffness (N/m)' =
+			VAR Z = [z Stiffness (N/m)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: 4fd25301-25e4-4d23-bb22-3ecde83ce7ff
+
+	measure 'Ecc RFD (N/s)' =
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			RETURN
+			    CALCULATE(AVERAGE('rtp_latestCMJ'[Eccentric Braking RFD (N/s)]), 'rtp_latestCMJ'[Date] = LatestDate)
+		formatString: 0
+		displayFolder: Strategy
+		lineageTag: 7c3f95ab-4228-4c5c-980f-48d5f44dfc4e
+
+	measure 'z Ecc RFD (N/s)' =
+			-- latest test vs this athlete's own tests up to the as-of date, in SD units (negative = worse)
+			VAR LatestDate = MAX('rtp_latestCMJ'[Date])
+			VAR Hist = 'rtp_latestCMJ'
+			VAR Cur = AVERAGEX(FILTER(Hist, 'rtp_latestCMJ'[Date] = LatestDate), 'rtp_latestCMJ'[Eccentric Braking RFD (N/s)])
+			VAR Mu = AVERAGEX(Hist, 'rtp_latestCMJ'[Eccentric Braking RFD (N/s)])
+			VAR Sd = STDEVX.P(Hist, 'rtp_latestCMJ'[Eccentric Braking RFD (N/s)])
+			VAR Z = DIVIDE(Cur - Mu, Sd)
+			RETURN
+			    IF(ISBLANK(Cur) || COUNTROWS(Hist) < 3 || ISBLANK(Z), BLANK(), Z)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: c3dc080f-ffb8-4fdf-950a-04283a743ea4
+
+	measure 'colour Ecc RFD (N/s)' =
+			VAR Z = [z Ecc RFD (N/s)]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(Z), "#FFFFFF", Z < -1, "#F07167", Z < -0.5, "#F2C14E", "#6CC28A")
+		isHidden
+		displayFolder: Readiness colours
+		lineageTag: 3ed91eb6-e61f-4c1b-a700-aa8439fc8904
+
+	measure 'Selected Metric Z' =
+			-- z-score for whichever metric a slicer has selected (used to colour the team bar charts)
+			SWITCH(
+			    SELECTEDVALUE('Metric Table'[Metric]),
+			    "Jump Height (Imp-Mom)[cm]", [z JH (cm)],
+			    "Peak Power / BM [W/kg]", [z PP/BM (W/kg)],
+			    "Concentric Impulse (Asym) %", [z Conc Asym (%)],
+			    "Eccentric Braking Impulse (Asym) %", [z Ecc Asym (%)],
+			    "Contraction Time [ms]", [z CT (ms)],
+			    "Vertical Velocity at Takeoff [m/s]", [z Takeoff Vel (m/s)],
+			    "Force at Zero Velocity [N]", [z Force @ 0 Vel (N)],
+			    "Countermovement Depth [cm]", [z CM Depth (cm)],
+			    "CMJ Stiffness [N/m]", [z Stiffness (N/m)],
+			    "Eccentric Braking RFD [N/s]", [z Ecc RFD (N/s)],
+			    BLANK()
+			)
+		formatString: 0.00
+		isHidden
+		displayFolder: Readiness z-scores
+		lineageTag: 3c16c83d-4017-4434-b8ae-d2a2ffca4b64
+
+	measure 'Flagged Athletes' =
+			-- athletes with at least one metric more than 1 SD worse than their normal
+			COUNTROWS(
+			    FILTER(
+			        VALUES('athleteid'[Name]),
+			        MINX({ COALESCE([z JH (cm)], 0), COALESCE([z PP/BM (W/kg)], 0), COALESCE([z Conc Asym (%)], 0), COALESCE([z Ecc Asym (%)], 0), COALESCE([z CT (ms)], 0), COALESCE([z Takeoff Vel (m/s)], 0), COALESCE([z Force @ 0 Vel (N)], 0), COALESCE([z CM Depth (cm)], 0), COALESCE([z Stiffness (N/m)], 0), COALESCE([z Ecc RFD (N/s)], 0) }, [Value]) < -1
+			    )
+			)
+		formatString: 0
+		displayFolder: Summary
+		lineageTag: 15ce396b-e1d2-4913-90ce-6b6b0756f87b
+
+	measure 'Tested This Week' =
+			VAR AsOf = CALCULATE(MAX('rtp_latestCMJ'[Date]), ALL('athleteid'))
+			VAR Tested =
+			    COUNTROWS(FILTER(VALUES('athleteid'[Name]), CALCULATE(MAX('rtp_latestCMJ'[Date])) > AsOf - 7))
+			VAR Total = COUNTROWS(VALUES('athleteid'[Name]))
+			RETURN
+			    FORMAT(Tested, "0") & " / " & FORMAT(Total, "0")
+		displayFolder: Summary
+		lineageTag: 4ea62125-376b-4fa7-8bf3-4df5739a79b7
+
+	column Metric
+		dataType: string
+		lineageTag: a42ad6a5-5736-4b20-92cb-6c29fb9247cf
+		summarizeBy: none
+		sourceColumn: Metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: e7e85042-39e1-43ce-b62c-bbc39d9fa475
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Metric Table' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("bdDhasIwEMDxVzkKgoKjzzB1MoUOmcPBQj+EcKmhvVy5Xjf69kvnHMz6KST8/uE4Y7J9Ty08Y6jOCvMdtQ8F08I4KrNldkDxLGSjw6xcmnS3NRz4CyWHVQHmPa+re+7JOYwqwcFKbB1iBenjvukQZjB/7AZapGg8CVWGn2TN8dpc7UXC7J5VsU4DR9BACIa6cYxjelWsLuiEosHZBk7YsAs6gFV4szWy9ynIp8WWxeGoPlD4L7tVa+6johB/IqWBYYOtnuF3Yf9lsYejBu8jdh2Yl3xKpot63W5GejNd+Q0=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metric = _t, Category = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metric", type text}, {"Category", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","Peak Power/ BM [W/kg]","Peak Power / BM [W/kg]",Replacer.ReplaceText,{"Metric"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Eccentric Braking Impulse % (Asym)","Eccentric Braking Impulse (Asym) %",Replacer.ReplaceText,{"Metric"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Force at Zero Velocity","Force at Zero Velocity [N]",Replacer.ReplaceText,{"Metric"})
+				in
+				    #"Replaced Value2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
