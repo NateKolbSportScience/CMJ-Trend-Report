@@ -271,6 +271,12 @@ table rtp_latestCMJ
 				        else
 				            let t = Text.Remove(Text.Trim(Text.From(v)), {"%", " ", "#(00A0)"})
 				            in if t = "" then null else try Number.FromText(t, "en-US") otherwise null,
+				    // "2026/09/08" or "2026-09-08" (year first) reads the same whatever ExportCulture is set to
+				    YearFirst = (t as text) as nullable date =>
+				        let p = Text.SplitAny(Text.BeforeDelimiter(t & " ", " "), "/-.")
+				        in if List.Count(p) = 3 and Text.Length(p{0}) = 4
+				           then try #date(Number.FromText(p{0}), Number.FromText(p{1}), Number.FromText(p{2})) otherwise null
+				           else null,
 				    ToDate = (v as any) as nullable date =>
 				        if v = null then null
 				        else if v is date then v
@@ -278,6 +284,7 @@ table rtp_latestCMJ
 				        else
 				            let t = Text.Trim(Text.From(v))
 				            in if t = "" then null
+				               else if YearFirst(t) <> null then YearFirst(t)
 				               else try Date.FromText(t, ExportCulture)
 				               otherwise try DateTime.Date(DateTime.FromText(t, ExportCulture))
 				               otherwise try Date.FromText(Text.BeforeDelimiter(t, " "), ExportCulture)
@@ -394,7 +401,13 @@ table rtp_latestCMJ
 				    ConcDirection = Table.AddColumn(EccDirection, "Concentric Impulse % (Asym) Direction", each let n = Asym([#"Concentric Impulse % (Asym) (%)"]) in if n = null then null else Int64.From(n)),
 				
 				    // ---------- athletes: tidy names, number them, optionally anonymise --------------------
-				    Tidy = Table.TransformColumns(ConcDirection, {{"Name", CleanName}}),
+				    // No Name column, or a blank name? Fall back to the ExternalId so de-identified exports still load
+				    Tidy = Table.FromRecords(
+				        Table.TransformRows(ConcDirection, (r) =>
+				            Record.TransformFields(r, {"Name", (n) =>
+				                let c = CleanName(n), id = CleanName(r[ExternalId])
+				                in if c <> null then c else if id <> null then "ID " & id else null})),
+				        Table.ColumnNames(ConcDirection), MissingField.UseNull),
 				    Valid = Table.SelectRows(Tidy, each [Name] <> null and [Date] <> null),
 				    Names = List.Sort(List.Distinct(Valid[Name])),
 				    Index = Record.FromList(List.Numbers(1, List.Count(Names)), Names),

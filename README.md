@@ -63,6 +63,8 @@ The import is written to survive the ways VALD exports differ between accounts a
 - Overlapping exports are de-duplicated.
 - Comma or semicolon delimiters and UTF-8 BOMs are detected automatically.
 - Double spaces in athlete names are cleaned up.
+- De-identified exports with no Name column load using the ExternalId instead.
+- Year-first dates (2026/09/08) are read correctly whatever `ExportCulture` is set to.
 
 To check an export before opening Power BI:
 

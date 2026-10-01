@@ -32,6 +32,12 @@ def number(v):
 
 
 def to_date(v):
+    m = re.match(r"(\d{4})[/.-](\d{1,2})[/.-](\d{1,2})", (v or "").strip())
+    if m:  # year first, e.g. 2026/09/08
+        try:
+            return datetime(*map(int, m.groups())).date()
+        except ValueError:
+            return None
     for fmt in ("%m/%d/%Y", "%Y-%m-%d", "%m/%d/%Y %I:%M %p", "%m/%d/%Y %H:%M"):
         try:
             return datetime.strptime((v or "").strip(), fmt).date()
@@ -86,6 +92,8 @@ def load(folder: Path):
         o["Eccentric Braking Impulse % (Asym) Direction"] = asym(o["Eccentric Braking Impulse % (Asym) (%)"])
         o["Concentric Impulse % (Asym) Direction"] = asym(o["Concentric Impulse % (Asym) (%)"])
         o["Name"] = " ".join((o["Name"] or "").split()) or None
+        if o["Name"] is None and o["ExternalId"]:  # de-identified export: fall back to the ExternalId
+            o["Name"] = "ID " + " ".join(o["ExternalId"].split())
         if o["Name"] and o["Date"]:
             out.append(o)
     names = sorted({o["Name"] for o in out})
